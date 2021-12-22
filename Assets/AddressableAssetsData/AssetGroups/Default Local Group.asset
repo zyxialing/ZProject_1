@@ -15,19 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: a8d517fbbef54d14cbc03c4a4246910b
+  m_GUID: 0ecedca17c5fe5244ba1dcfaed665ff5
   m_SerializeEntries:
-  - m_GUID: b335907f5461f044eaedee9e0fe63732
-    m_Address: Assets/Game/AssetDynamic/Scene/LoadingScene
+  - m_GUID: ce499e8bf0028ac48ab6a95bb05d6f2b
+    m_Address: Assets/Game/AssetDynamic/Scene/MainUI
     m_ReadOnly: 0
     m_SerializedLabels: []
-    <BundleFileId>k__BackingField: 
-    <IsInResources>k__BackingField: 0
-    <IsInSceneList>k__BackingField: 0
-    <IsSubAsset>k__BackingField: 0
-    m_CheckedIsScene: 0
-    m_IsScene: 0
-    m_cachedAssetPath: 
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 49d437b0b236afb44a40a90503f20812
+    m_Address: Assets/Game/AssetDynamic/Prefab/UI/Overlay/LoadingPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
