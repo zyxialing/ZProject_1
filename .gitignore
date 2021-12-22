@@ -1,0 +1,14 @@
+AstarPathfindingProjectEditor.csproj
+AstarPathfindingProject.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+.vsconfig
+Packages
+obj
+Logs
+Library
+.vs
+ZProject_1.sln
+ZFramework.Editor.csproj
+ZFramework.csproj
+PackageToolsEditor.csproj
