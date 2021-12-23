@@ -11,7 +11,7 @@ public partial class LoadingPanel : BasePanel
     {
         base.Init(args);
         panelLayer = PanelLayer.Tips;
-       adressPath = "Overlay/LoadingPanel";
+       adressPath = "Overlay/Loading/LoadingPanel";
     }
     public override void OnShowing()
     {
@@ -39,8 +39,10 @@ public partial class LoadingPanel : BasePanel
     }
     private void EnterGame()
     {
-        ResLoader.Instance.GetScene("MainUI", null);
-        Close();
+        ResLoader.Instance.GetScene("MainUI", ()=> {
+            Close();
+            UIManager.Instance.OpenPanel<MainPanel>();
+        });
     }
 
     public void Update()
