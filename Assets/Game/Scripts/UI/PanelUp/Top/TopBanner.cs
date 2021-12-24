@@ -3,20 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public partial class MainPanel : BasePanel
+public partial class TopBanner : BasePanel
 {
 
     public override void Init(params object[] args)
     {
         base.Init(args);
         panelLayer = PanelLayer.Panel;
-        adressPath = "Panel/Main/MainPanel";
+        adressPath = "PanelUp/Top/TopBanner";
     }
+
     public override void OnShowing()
     {
-        test.onClick.AddListener(() => {
-            UIManager.Instance.OpenPanel<TopBanner>();
-        });
+        EventManager.Instance.AddObserver<EventShowBanner>(OnShowBanner);
     }
 
     public override void OnOpen()
@@ -24,19 +23,19 @@ public partial class MainPanel : BasePanel
         RefreshPanel();
     }
 
-    public override void OnHide()
-    {
-     
-    }
-
     public override void OnClosing()
     {
-     
+        EventManager.Instance.RemoveObserver<EventShowBanner>(OnShowBanner);
     }
 
     private void RefreshPanel()
     {
 
+    }
+    ///////////////////////message///////////////////
+    private void OnShowBanner(EventShowBanner obj)
+    {
+        panel.SetActive(obj.show);
     }
 
 }

@@ -15,26 +15,8 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: a19c252aa75a36f4bb6390b98bba1696
-  m_SerializeEntries:
-  - m_GUID: 49d437b0b236afb44a40a90503f20812
-    m_Address: Assets/Game/AssetDynamic/Prefab/UI/Overlay/Loading/LoadingPanel
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ce499e8bf0028ac48ab6a95bb05d6f2b
-    m_Address: Assets/Game/AssetDynamic/Scene/MainUI
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: bfc86bdf82571fd4386bb1cd3e1b4ed4
-    m_Address: Assets/Game/AssetDynamic/Prefab/UI/Panel/Main/MainPanel
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+  m_GUID: ce619cb3a69d07a4fa139e2c7eecd633
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 351904ccfacb7cd4fbe4a4b44331d162, type: 2}
   m_SchemaSet:

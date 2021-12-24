@@ -13,14 +13,25 @@ public partial class LoadingPanel : BasePanel
         panelLayer = PanelLayer.Tips;
        adressPath = "Overlay/Loading/LoadingPanel";
     }
+
     public override void OnShowing()
+    {
+  
+    }
+
+    public override void OnOpen()
+    {
+        RefreshPanel();
+    }
+
+    public override void OnHide()
     {
 
     }
 
-    public override void OnShowed()
+    public override void OnClosing()
     {
-        RefreshPanel();
+
     }
 
     private void RefreshPanel()
@@ -41,7 +52,9 @@ public partial class LoadingPanel : BasePanel
     {
         ResLoader.Instance.GetScene("MainUI", ()=> {
             Close();
-            UIManager.Instance.OpenPanel<MainPanel>();
+            UIManager.Instance.OpenPanel<MainPanel>(()=> {
+
+            });
         });
     }
 
