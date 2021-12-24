@@ -14,9 +14,7 @@ public partial class MainPanel : BasePanel
     }
     public override void OnShowing()
     {
-        test.onClick.AddListener(() => {
-            UIManager.Instance.OpenPanel<TopBanner>();
-        });
+
     }
 
     public override void OnOpen()
