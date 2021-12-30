@@ -6,8 +6,9 @@ public class Root : MonoBehaviour
 {
     void Start()
     {
-        ResLoader.Instance.GetScene("MainUI", ()=> {
-            UIManager.Instance.OpenPanel<LoadingPanel>();
+        UIManager.Instance.OpenPanel<LoadingPanel>(()=> {
+            ResLoader.Instance.GetScene("GameScene",null);
         });
+       
     }
 }

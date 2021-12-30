@@ -9,7 +9,7 @@ public partial class TopBanner : BasePanel
     public override void Init(params object[] args)
     {
         base.Init(args);
-        panelLayer = PanelLayer.Panel;
+        panelLayer = PanelLayer.PanelUp;
         adressPath = "PanelUp/Top/TopBanner";
     }
 

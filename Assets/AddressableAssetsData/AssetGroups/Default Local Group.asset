@@ -36,7 +36,67 @@ MonoBehaviour:
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: ce499e8bf0028ac48ab6a95bb05d6f2b
-    m_Address: Assets/Game/AssetDynamic/Scene/MainUI
+    m_Address: Assets/Game/AssetDynamic/Scene/GameScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 048dcbfa94a248b4a963769cd1ed833b
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Yellow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 969e6bf6d4f29194581d08ff881e5f54
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Red
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 27be12c2a7b141d4599362af3c8c111d
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Green
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 678f8a1e8cd0ffa46982c270a0c8d72c
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 68e8ac3a5fc4f704d9c4795e72e441f5
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Purple
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ae161f3038eaeeb468df48a81304ca3a
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Brown
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fe951292829d1174290f234e8e20429c
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame04_n
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 55e470f1d77e88a4297b311a29799ab1
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame04_d
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0bb5ca78b9a1ced4ab4de29c30fb1ac3
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Icon_PictoIcon_Lock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d40f215accdb13941b9d04514b74fda3
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Icon_PictoIcon_Add03
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

@@ -44,17 +44,16 @@ public partial class LoadingPanel : BasePanel
             if (progress >= 1)
             {
                 UIManager.Instance.Init();
+                GameControler.Instance.Init();
                 Invoke("EnterGame", 1f);
             }
         });
     }
     private void EnterGame()
     {
-        ResLoader.Instance.GetScene("MainUI", ()=> {
+        UIManager.Instance.OpenPanel<TopBanner>();
+        UIManager.Instance.OpenPanel<MainPanel>(()=> {
             Close();
-            UIManager.Instance.OpenPanel<MainPanel>(()=> {
-
-            });
         });
     }
 
