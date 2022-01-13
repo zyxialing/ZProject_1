@@ -6,7 +6,11 @@ public partial class MP_PropItemCell : EnhancedScrollerCellView
 
    public void AutoInit()
    {
-        if (isFirstInit) return;
-        isFirstInit = true;
+        if (!isFirstInit) {
+            isFirstInit = true;
+            ServiceBinder.Instance.RegisterObj(this);
+        }
+   
+
    }
 }
