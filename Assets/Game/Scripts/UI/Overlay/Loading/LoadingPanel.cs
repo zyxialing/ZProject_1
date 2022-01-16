@@ -4,9 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static ResHanderManager;
+
 public partial class LoadingPanel : BasePanel
 {
-
+    ResHanderMono resHanderMono;
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -16,12 +18,12 @@ public partial class LoadingPanel : BasePanel
 
     public override void OnShowing()
     {
-  
+        resHanderMono = ResHanderManager.Instance.Init();
     }
 
     public override void OnOpen()
     {
-        RefreshPanel();
+        StartCoroutine(LoadRes());
     }
 
     public override void OnHide()
@@ -34,21 +36,55 @@ public partial class LoadingPanel : BasePanel
 
     }
 
-    private void RefreshPanel()
+    private IEnumerator LoadRes()
     {
         slider_LoadingBar.value = 0;
-        ResHanderManager.Instance.Init((progress) =>
+        yield return resHanderMono.InitCommonAudioRes();
+        UpdateProgress(0.1f);
+        float progress = 0.2f;
+        yield return LoadExcel();
+
+        for (int i = 0; i < 4; i++)
         {
-            slider_LoadingBar.DOKill(false);
-            slider_LoadingBar.DOValue(progress, 1f);
-            if (progress >= 1)
+            UpdateProgress(progress);
+            progress += 0.2f;
+            yield return new WaitForSeconds(0.4f);
+        }
+
+        UpdateProgress(1f);
+        UIManager.Instance.Init();
+        GameControler.Instance.Init();
+        yield return null;
+        while (true)
+        {
+            if (slider_LoadingBar.value >= 1)
             {
-                UIManager.Instance.Init();
-                GameControler.Instance.Init();
-                Invoke("EnterGame", 1f);
+                EnterGame();
+                break;
             }
-        });
+            yield return null;
+        }
+
     }
+
+    private IEnumerator LoadExcel()
+    {
+        int tabelCount = 0;
+        Config<equip>.InitConfig((data) => { tabelCount++; });
+        Config<language>.InitConfig((data) => { tabelCount++; });
+        while (tabelCount<2)
+        {
+            yield return null;
+        }
+      
+
+    }
+    private void UpdateProgress(float progress)
+    {
+        slider_LoadingBar.DOKill(false);
+        slider_LoadingBar.DOValue(progress, 1f);
+    }
+
     private void EnterGame()
     {
         UIManager.Instance.OpenPanel<TopBanner>();

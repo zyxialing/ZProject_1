@@ -16,6 +16,7 @@ public partial class MainPanel : BasePanel
 
    public override void AutoInit()
    {
+        ServiceBinder.Instance.RegisterObj(this);
     this.equip_Center = panel.transform.Find("Background/Equip_Center").GetComponent<UnityEngine.RectTransform>();
     this.equip = panel.transform.Find("Background/Tap_Menu/equip").GetComponent<UnityEngine.UI.Button>();
     this.prop = panel.transform.Find("Background/Tap_Menu/prop").GetComponent<UnityEngine.UI.Button>();

@@ -15,6 +15,7 @@ public partial class MP_EquipScroll : MonoBehaviour, IEnhancedScrollerDelegate
 
     void Start()
     {
+        ServiceBinder.Instance.RegisterObj(this);
         scroller = GetComponent<EnhancedScroller>();
         rectTransform = GetComponent<RectTransform>();
         cellRectTransform = cellViewPrefab.GetComponent<RectTransform>();

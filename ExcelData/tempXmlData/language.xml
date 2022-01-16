@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alllanguage>
+<languages>
+	<language id="10000" ch="道具1" en="prop1" js="prop1">
+	</language>
+	<language id="10001" ch="道具2" en="prop2" js="prop2">
+	</language>
+	<language id="10002" ch="道具3" en="prop3" js="prop3">
+	</language>
+	<language id="20001" ch="描述1" en="des1" js="des1">
+	</language>
+	<language id="20002" ch="描述2" en="des2" js="des2">
+	</language>
+	<language id="20003" ch="描述3" en="des3" js="des3">
+	</language>
+</languages>
+</alllanguage>

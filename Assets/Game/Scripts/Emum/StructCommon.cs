@@ -9,9 +9,9 @@ public struct PropItem
     public Image itemIcon;
     public Image itemFrame;
     public GameObject itemObj;
-    public TextMeshPro itemCount;
+    public TextMeshProUGUI itemCount;
 
-    public PropItem(Image icon,Image frame,GameObject obj,TextMeshPro textMesh)
+    public PropItem(Image icon,Image frame,GameObject obj, TextMeshProUGUI textMesh)
     {
         itemIcon = icon;
         itemFrame = frame;

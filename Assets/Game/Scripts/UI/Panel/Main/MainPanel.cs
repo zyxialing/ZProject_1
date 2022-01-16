@@ -31,6 +31,11 @@ public partial class MainPanel : BasePanel
 
     public override void OnOpen()
     {
+        List<equip> equips = Config<equip>.GetExcel();
+        for (int i = 0; i < equips.Count; i++)
+        {
+            ZLogUtil.LogError(equips[i].desc);
+        }
         RefreshPanel();
     }
 
@@ -46,6 +51,7 @@ public partial class MainPanel : BasePanel
 
     private void RefreshPanel()
     {
+        
         OnTabEquipClick();
     }
 

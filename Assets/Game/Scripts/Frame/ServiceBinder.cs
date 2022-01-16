@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,17 @@ public class ServiceBinder : Singleton<ServiceBinder>
      private ServiceBinder()
      {
         container = new ZFrameworkContainer();
-        container.RegisterInstance<ITestMgr>(new TestMgr());
+        Binder();
+      
      }
-
     public void RegisterObj(object obj)
     {
         container.Inject(obj);
     }
+    private void Binder()
+    {
+        container.RegisterInstance<IPropMgr>(new PropMgr());
+    }
+
 
 }
