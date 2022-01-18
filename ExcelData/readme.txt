@@ -1,3 +1,4 @@
+目前支持int，long,float,bool,string,stringArray,intArray,floatArray,boolArray,longArray
 1-9999（保留id）暂时不用
 10000-99999（多语言id）
 100000-129999（武器词缀id）（细分1：100000-109999武器前缀id）（细分2：110000-119999武器名称id）（细分3：120000-129999武器后缀id）

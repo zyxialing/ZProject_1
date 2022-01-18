@@ -15,16 +15,40 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 6dc716904c2063a46b044f910f2dafad
+  m_GUID: 6c124b70cac62e04eac3da593e38e93a
   m_SerializeEntries:
-  - m_GUID: 459f97d3c073a2a4a9c42e9078345edf
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/equip
+  - m_GUID: 72b26b7e38dc24542b48ef322f553477
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_affix
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: a96a882b12131c14ba29dff2d5dc54fd
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/language
+  - m_GUID: d605c76fa3d85644c87175d84f9f1762
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ccca06213afc1f746b7a155828087b38
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_equip
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 89b761b35e977a64eb1acc6ed97dcca8
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_language
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 69460ad2eea76014aa6ad0c76c4d8d7e
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_material
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a67ff24d0321a334ab1ac74e5d3948f2
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_prop
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -109,6 +133,42 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 0bb5ca78b9a1ced4ab4de29c30fb1ac3
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Icon_PictoIcon_Lock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a26c395c114376a47a3f726819c26816
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 88160250d3f82714e8c8a3d7bd44fb3a
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a5beebad0a20db04cafbe3ff929d8a9c
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: de91c83386f01fd4c97d62fd86e888c6
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 27f9a1aca6f58b24f9ed7c68abadebcc
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 31f7129b4d9a1224bbbde7353f69bc43
+    m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab5
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

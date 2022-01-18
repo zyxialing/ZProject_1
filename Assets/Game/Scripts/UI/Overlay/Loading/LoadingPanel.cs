@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Table;
 using UnityEngine;
 using UnityEngine.UI;
 using static ResHanderManager;
@@ -70,9 +71,13 @@ public partial class LoadingPanel : BasePanel
     private IEnumerator LoadExcel()
     {
         int tabelCount = 0;
-        Config<equip>.InitConfig((data) => { tabelCount++; });
-        Config<language>.InitConfig((data) => { tabelCount++; });
-        while (tabelCount<2)
+        Config<excel_affix>.InitConfig((data) => { tabelCount++; });
+        Config<excel_character>.InitConfig((data) => { tabelCount++; });
+        Config<excel_equip>.InitConfig((data) => { tabelCount++; });
+        Config<excel_language>.InitConfig((data) => { tabelCount++; });
+        Config<excel_material>.InitConfig((data) => { tabelCount++; });
+        Config<excel_prop>.InitConfig((data) => { tabelCount++; });
+        while (tabelCount<6)
         {
             yield return null;
         }

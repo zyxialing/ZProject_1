@@ -23,19 +23,10 @@ public partial class MainPanel : BasePanel
         mp_Role.gameObject.SetActive(true);
         mP_EquipScroll.gameObject.SetActive(true);
         mP_PropScroll.gameObject.SetActive(true);
-        equip.onClick.AddListener(OnTabEquipClick);
-        prop.onClick.AddListener(OnTabPropClick);
-        compose.onClick.AddListener(OnTabComposeClick);
-        role.onClick.AddListener(OnTabRoleClick);
     }
 
     public override void OnOpen()
     {
-        List<equip> equips = Config<equip>.GetExcel();
-        for (int i = 0; i < equips.Count; i++)
-        {
-            ZLogUtil.LogError(equips[i].desc);
-        }
         RefreshPanel();
     }
 
@@ -52,41 +43,11 @@ public partial class MainPanel : BasePanel
     private void RefreshPanel()
     {
         
-        OnTabEquipClick();
+
     }
 
     //click
-    private void OnTabRoleClick()
-    {
-        equip_img.color = btnBlue;
-        prop_img.color = btnBlue;
-        compose_img.color = btnBlue;
-        PlayBtnAnim(role_img.transform, role_img, btnWhite, AnimCallBack,3);
-    }
 
-    private void OnTabComposeClick()
-    {
-        equip_img.color = btnBlue;
-        prop_img.color = btnBlue;
-        role_img.color = btnBlue;
-        PlayBtnAnim(compose_img.transform, compose_img, btnWhite, AnimCallBack,2);
-    }
-
-    private void OnTabPropClick()
-    {
-        equip_img.color = btnBlue;
-        compose_img.color = btnBlue;
-        role_img.color = btnBlue;
-        PlayBtnAnim(prop_img.transform, prop_img, btnWhite,AnimCallBack,1);
-    }
-
-    private void OnTabEquipClick()
-    {
-        prop_img.color = btnBlue;
-        compose_img.color = btnBlue;
-        role_img.color = btnBlue;
-        PlayBtnAnim(equip_img.transform, equip_img, btnWhite, AnimCallBack,0);
-    }
 
     private void PlayBtnAnim(Transform trans,Image image,Color colorTarget,Action<int> callback,int index)
     {
