@@ -2788,12 +2788,12 @@ MonoBehaviour:
   maxVelocity: 0
   scrollbarVisibility: 0
   snapping: 0
-  snapVelocityThreshold: 0
+  snapVelocityThreshold: 200
   snapWatchOffset: 0
   snapJumpToOffset: 0
   snapCellCenterOffset: 0
   snapUseCellSpacing: 0
-  snapTweenType: 28
+  snapTweenType: 0
   snapTweenTime: 0
   snapWhileDragging: 0
   _scrollPosition: 0
