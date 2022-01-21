@@ -11,6 +11,8 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
     private RectTransform scrollRectTransform;
     private Coroutine _coroutine;
     private float[] IndexPos;
+    private bool isDraging = false;
+    private bool isMoving = false;
     public void Init()
     {
         scroller.ReloadData();
@@ -21,23 +23,60 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
         {
             IndexPos[i] = i * width;
         }
+        scroller.onPointerDown = OnPointerDown;
+        scroller.onPointerUp = OnPointerUp;
         scroller.scrollOnBeginDrag = OnBeginDrag;
         scroller.scrollOnEndDrag = OnEndDrag;
     }
-    private void OnBeginDrag(PointerEventData data)
+
+    public void MoveToIndex(int index)
     {
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        _coroutine = StartCoroutine(Snap(index));
+    }
+
+    public void OnPointerUp(PointerEventData data)
+    {
+        if (!isDraging)
+        {
+            _coroutine = StartCoroutine(Snap());
         }
     }
-    private void OnEndDrag(PointerEventData data)
+
+    public void OnPointerDown(PointerEventData data)
     {
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
+            _coroutine = null;
+            isMoving = false;
+        }
+    }
+
+    public void OnBeginDrag(PointerEventData data)
+    {
+        isDraging = true;
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+            isMoving = false;
+        }
+    }
+    public void OnEndDrag(PointerEventData data)
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+            isMoving = false;
         }
        _coroutine = StartCoroutine(Snap());
+       isDraging = false;
     }
 
 
@@ -47,6 +86,7 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
         cellView.dataIndex = dataIndex;
         cellView.cellIndex = cellIndex;
         cellView.scroller = scroller;
+        cellView.InitData(this);
         cellView.RefreshCellView();
         return cellView;
     }
@@ -61,13 +101,17 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
         return 6;
     }
     #region ¶¯»­
-    private IEnumerator Snap()
+    private IEnumerator Snap(int index = -1)
     {
         while (Mathf.Abs(scroller.LinearVelocity) > scroller.snapVelocityThreshold)
         {
             yield return null;
         }
-        int index = GetSnapIndex(scroller.ScrollPosition);
+        if (index < 0)
+        {
+            index = GetSnapIndex(scroller.ScrollPosition);
+        }
+        isMoving = true;
         scroller.LinearVelocity = 0;
         float time = 0.5f;
         float _tweenTimeLeft = 0;
@@ -84,6 +128,7 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
 
             yield return null;
         }
+        isMoving = false;
     }
 
     private int GetSnapIndex(float curPos)

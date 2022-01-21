@@ -6,22 +6,28 @@ using UnityEngine.UI;
 public partial class MP_MenuItemCell : EnhancedScrollerCellView
 {
     private bool _init = false;
+    private MP_TapMenu _tapMenu;
     public override void RefreshCellView()
     {
-        Init();
         UIUtils.SetSprite(icon, "icon/tab" + dataIndex);
 
     }
 
+    public override void InitData(object obj)
+    {
+        Init(obj);
+    }
 
-    private void Init()
+    private void Init(object obj)
     {
         if (!_init)
         {
             _init = true;
             AutoInit();
+            _tapMenu = obj as MP_TapMenu;
             cellBtn.onClick.RemoveAllListeners();
-            cellBtn.onClick.AddListener(() => { ZLogUtil.LogError(dataIndex); });
+            cellBtn.onClick.AddListener(() => { _tapMenu.MoveToIndex(dataIndex); });
+            cellBtn.onPressDown.AddListener(() => { _tapMenu.OnPointerDown(null); });
         }
     }
 
