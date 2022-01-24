@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
-  m_DefaultGroup: 6c124b70cac62e04eac3da593e38e93a
+  m_DefaultGroup: c7e71fccf2508564fbbc4c07c3ce6525
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -37,33 +37,33 @@ MonoBehaviour:
   m_ProfileSettings:
     m_Profiles:
     - m_InheritedParent: 
-      m_Id: 1c5eceb2dd82d8842b7196ec92b8b952
+      m_Id: 3b82ec2b6946ad54c940a45ca3444120
       m_ProfileName: Default
       m_Values:
-      - m_Id: ac8213a061d25cc4b9fd483a0450611b
+      - m_Id: b9bdba5e424e07444a0683a411d15ed4
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: 66710a40aa1ccaa4298ba2170f02c224
+      - m_Id: 7834f5e1e4c570c4291a642f802fcedf
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: 3267216077b04a0439fb4694d3e6d6a3
+      - m_Id: 62da2be3cf235ca4a9edb8fd06ca2f9b
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: 29988d010d1881f4788fea582b29f799
+      - m_Id: 8dc67871de030e04ab2fccb2fc346dac
         m_Value: ServerData/[BuildTarget]
-      - m_Id: b1699d8af9f06ec4bac3232b9f763964
+      - m_Id: 6486ed684b203444a8cd047835c135ae
         m_Value: http://localhost/[BuildTarget]
     m_ProfileEntryNames:
-    - m_Id: ac8213a061d25cc4b9fd483a0450611b
+    - m_Id: b9bdba5e424e07444a0683a411d15ed4
       m_Name: BuildTarget
       m_InlineUsage: 0
-    - m_Id: 66710a40aa1ccaa4298ba2170f02c224
+    - m_Id: 7834f5e1e4c570c4291a642f802fcedf
       m_Name: LocalBuildPath
       m_InlineUsage: 0
-    - m_Id: 3267216077b04a0439fb4694d3e6d6a3
+    - m_Id: 62da2be3cf235ca4a9edb8fd06ca2f9b
       m_Name: LocalLoadPath
       m_InlineUsage: 0
-    - m_Id: 29988d010d1881f4788fea582b29f799
+    - m_Id: 8dc67871de030e04ab2fccb2fc346dac
       m_Name: RemoteBuildPath
       m_InlineUsage: 0
-    - m_Id: b1699d8af9f06ec4bac3232b9f763964
+    - m_Id: 6486ed684b203444a8cd047835c135ae
       m_Name: RemoteLoadPath
       m_InlineUsage: 0
     m_ProfileVersion: 1
@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e2a8cf3986208f643b09bdb9ba272f46, type: 2}
   - {fileID: 11400000, guid: c11360e20299ee64aab1c24e66393cfe, type: 2}
   - {fileID: 11400000, guid: 972bd1bf03bb9054c938131e379f8d97, type: 2}
-  m_ActiveProfileId: 1c5eceb2dd82d8842b7196ec92b8b952
+  m_ActiveProfileId: 3b82ec2b6946ad54c940a45ca3444120
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}

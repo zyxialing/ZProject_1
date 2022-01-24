@@ -18,6 +18,7 @@ public partial class MainPanel : BasePanel
     }
     public override void OnShowing()
     {
+        EventManager.Instance.AddObserver<EventChangeTab_MP>(EventChangeTab_MPCallBack);
         selectIndex = -1;
         mp_Compose.gameObject.SetActive(true);
         mp_Role.gameObject.SetActive(true);
@@ -27,6 +28,7 @@ public partial class MainPanel : BasePanel
 
     public override void OnOpen()
     {
+        SelectIndex(0);
         RefreshPanel();
     }
 
@@ -42,33 +44,13 @@ public partial class MainPanel : BasePanel
 
     private void RefreshPanel()
     {
-        
+ 
 
     }
 
-    //click
+ 
 
-
-    private void PlayBtnAnim(Transform trans,Image image,Color colorTarget,Action<int> callback,int index)
-    {
-        if (selectIndex < 0)
-        {
-            AnimCallBack(0);
-            return;
-        }
-        if (btnSequence!=null && btnSequence.IsPlaying())
-        {
-            btnSequence.Kill(true);
-            btnSequence = null;
-        }
-        btnSequence = DOTween.Sequence();
-        btnSequence.Append(trans.DOScale(Vector3.one * 1.2f, 0.05f));
-        btnSequence.Join(image.DOColor(colorTarget, 0.1f));
-        btnSequence.Append(trans.DOScale(Vector3.one, 0.05f));
-        btnSequence.AppendCallback(() => { callback?.Invoke(index); btnSequence = null; });
-    }
-
-    private void AnimCallBack(int index)
+    private void SelectIndex(int index)
     {
         if (selectIndex != index)
         {
@@ -101,6 +83,10 @@ public partial class MainPanel : BasePanel
 
         }
     }
-
+    /// event
+    private void EventChangeTab_MPCallBack(EventChangeTab_MP eventData)
+    {
+        SelectIndex(eventData.index);
+    }
 
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 6c124b70cac62e04eac3da593e38e93a
+  m_GUID: c7e71fccf2508564fbbc4c07c3ce6525
   m_SerializeEntries:
   - m_GUID: 72b26b7e38dc24542b48ef322f553477
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_affix
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: ce499e8bf0028ac48ab6a95bb05d6f2b
+  - m_GUID: d1c3109bdb54ad54c8a2b2838528e640
     m_Address: Assets/Game/AssetDynamic/Scene/GameScene
     m_ReadOnly: 0
     m_SerializedLabels: []

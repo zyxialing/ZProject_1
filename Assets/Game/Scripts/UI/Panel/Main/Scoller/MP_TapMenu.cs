@@ -29,6 +29,36 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
         scroller.scrollOnEndDrag = OnEndDrag;
     }
 
+    public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
+    {
+       EnhancedScrollerCellView cellView = scroller.GetCellView(cellViewPrefab);
+        cellView.dataIndex = dataIndex;
+        cellView.cellIndex = cellIndex;
+        cellView.scroller = scroller;
+        cellView.InitData(this);
+        cellView.RefreshCellView();
+        return cellView;
+    }
+
+    public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
+    {
+        return cellRectTransform.rect.height;
+    }
+
+    public int GetNumberOfCells(EnhancedScroller scroller)
+    {
+        return 6;
+    }
+
+    private void ChangeTab(int index)
+    {
+        var t = EventChangeTab_MP.AutoCreate();
+        t.index = index;
+        EventManager.Instance.Dispatch(t);
+    }
+
+
+    #region ¶¯»­
     public void MoveToIndex(int index)
     {
         if (_coroutine != null)
@@ -75,32 +105,10 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
             _coroutine = null;
             isMoving = false;
         }
-       _coroutine = StartCoroutine(Snap());
-       isDraging = false;
+        _coroutine = StartCoroutine(Snap());
+        isDraging = false;
     }
 
-
-    public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
-    {
-       EnhancedScrollerCellView cellView = scroller.GetCellView(cellViewPrefab);
-        cellView.dataIndex = dataIndex;
-        cellView.cellIndex = cellIndex;
-        cellView.scroller = scroller;
-        cellView.InitData(this);
-        cellView.RefreshCellView();
-        return cellView;
-    }
-
-    public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
-    {
-        return cellRectTransform.rect.height;
-    }
-
-    public int GetNumberOfCells(EnhancedScroller scroller)
-    {
-        return 6;
-    }
-    #region ¶¯»­
     private IEnumerator Snap(int index = -1)
     {
         while (Mathf.Abs(scroller.LinearVelocity) > scroller.snapVelocityThreshold)
@@ -113,12 +121,14 @@ public partial class MP_TapMenu : MonoBehaviour, IEnhancedScrollerDelegate
         }
         isMoving = true;
         scroller.LinearVelocity = 0;
-        float time = 0.5f;
+        float dis = Mathf.Abs(scroller.ScrollPosition - IndexPos[index]);
+        float time = dis / 200f;
         float _tweenTimeLeft = 0;
         var newPosition = 0f;
+        ChangeTab(index);
         while (_tweenTimeLeft < time)
         {
-            newPosition = ZMathUtil.easeInSine(scroller.ScrollPosition, IndexPos[index], (_tweenTimeLeft / time));
+            newPosition = ZMathUtil.linear(scroller.ScrollPosition, IndexPos[index], (_tweenTimeLeft / time));
 
             // set the scroll position to the tweened position
             scroller.ScrollPosition = newPosition;

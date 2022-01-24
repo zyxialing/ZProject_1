@@ -54,7 +54,7 @@ public partial class LoadingPanel : BasePanel
 
         UpdateProgress(1f);
         UIManager.Instance.Init();
-        GameControler.Instance.Init();
+        //GameControler.Instance.Init();
         yield return null;
         while (true)
         {
