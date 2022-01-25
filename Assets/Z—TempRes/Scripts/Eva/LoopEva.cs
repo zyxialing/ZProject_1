@@ -62,7 +62,6 @@ public class LoopEva : EvaMono
         {
             OnComplete();
         }
-        speed = mapSpeed;
     }
 
     private void OnComplete()

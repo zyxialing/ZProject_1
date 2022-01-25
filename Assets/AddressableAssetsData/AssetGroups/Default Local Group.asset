@@ -173,6 +173,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: e2f277595bba3324a9e775ded1af260f
+    m_Address: Assets/Game/AssetDynamic/AI/ai1001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 351904ccfacb7cd4fbe4a4b44331d162, type: 2}
   m_SchemaSet:
