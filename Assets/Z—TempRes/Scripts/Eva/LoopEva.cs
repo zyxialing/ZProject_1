@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LoopEva : EvaMono
 {
+    public static LoopEva loopEva;
     public List<Transform> mapTransforms;
     [Range(0, 1)]
     public float mapSpeed = 1;
@@ -16,6 +17,10 @@ public class LoopEva : EvaMono
     private int mapCount;
     Transform headTF;
     Transform tialTF;
+    private void Awake()
+    {
+        loopEva = this;
+    }
     void Start()
     {
         if (InitPosition())

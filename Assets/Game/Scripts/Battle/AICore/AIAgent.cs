@@ -17,5 +17,6 @@ public class AIAgent : IUnit
         _behaviorTree = obj.AddComponent<BehaviorTree>();
         _behaviorTree.ExternalBehavior = ai;
         _behaviorTree.RestartWhenComplete = true;
+        _behaviorTree.ResetValuesOnRestart = true;
     }
 }
