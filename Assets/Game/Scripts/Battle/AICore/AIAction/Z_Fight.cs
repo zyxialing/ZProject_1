@@ -8,6 +8,7 @@ public class Z_Fight : BaseAction
 {
     private TaskStatus taskStatus;
     private Animator _animator;
+    private ZBoxTrigger _boxTrigger;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
@@ -19,29 +20,18 @@ public class Z_Fight : BaseAction
         _animator.SetInteger("state", 2);
         taskStatus = TaskStatus.Running;
     }
-
+    List<ZBoxTrigger> zBoxTriggers;
     public override TaskStatus OnUpdate()
     {
-        RecordTime();
-        return taskStatus;
-    }
-    int k = 0;
-    bool complete = true;
-    public override void DealTimeEvent()
-    {
-        AnimatorStateInfo animatorStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        if (_time >= animatorStateInfo.length*0.48f && complete)
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, 2f);
+        if (zBoxTriggers.Count > 0)
         {
-            complete = false;
-            k++;
-            ZLogUtil.LogError("xxxxxxxxxxx"+ k);
+            return TaskStatus.Running;
         }
-        if (!complete && _time >= animatorStateInfo.length)
+        else
         {
-            _time = 0;
-            complete = true;
+            return TaskStatus.Success;
         }
-        //ZLogUtil.Log(Mathf.RoundToInt(animatorStateInfo.normalizedTime*20));
     }
 
 }

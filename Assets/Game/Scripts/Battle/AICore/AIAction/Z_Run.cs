@@ -21,7 +21,7 @@ public class Z_Run : BaseAction
     List<ZBoxTrigger> zBoxTriggers;
     public override TaskStatus OnUpdate()
     {
-        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, 1f);
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, 2f);
         if (zBoxTriggers.Count > 0)
         {
             return TaskStatus.Success;
