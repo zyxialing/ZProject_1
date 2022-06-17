@@ -21,164 +21,137 @@ MonoBehaviour:
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_affix
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d605c76fa3d85644c87175d84f9f1762
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccca06213afc1f746b7a155828087b38
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_equip
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 89b761b35e977a64eb1acc6ed97dcca8
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_language
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 69460ad2eea76014aa6ad0c76c4d8d7e
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_material
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a67ff24d0321a334ab1ac74e5d3948f2
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_prop
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49d437b0b236afb44a40a90503f20812
     m_Address: Assets/Game/AssetDynamic/Prefab/UI/Overlay/Loading/LoadingPanel
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bfc86bdf82571fd4386bb1cd3e1b4ed4
     m_Address: Assets/Game/AssetDynamic/Prefab/UI/Panel/Main/MainPanel
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e4177b4e763a4224d8eb1aa1044addad
     m_Address: Assets/Game/AssetDynamic/Prefab/UI/PanelUp/Top/TopBanner
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d1c3109bdb54ad54c8a2b2838528e640
     m_Address: Assets/Game/AssetDynamic/Scene/GameScene
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 678f8a1e8cd0ffa46982c270a0c8d72c
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Blue
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ae161f3038eaeeb468df48a81304ca3a
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Brown
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27be12c2a7b141d4599362af3c8c111d
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Green
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68e8ac3a5fc4f704d9c4795e72e441f5
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Purple
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 969e6bf6d4f29194581d08ff881e5f54
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Red
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 048dcbfa94a248b4a963769cd1ed833b
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame01_Color_Yellow
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55e470f1d77e88a4297b311a29799ab1
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame04_d
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe951292829d1174290f234e8e20429c
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Frame_ItemFrame04_n
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d40f215accdb13941b9d04514b74fda3
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Icon_PictoIcon_Add03
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0bb5ca78b9a1ced4ab4de29c30fb1ac3
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/frame/Icon_PictoIcon_Lock
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a26c395c114376a47a3f726819c26816
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab0
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 88160250d3f82714e8c8a3d7bd44fb3a
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab1
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5beebad0a20db04cafbe3ff929d8a9c
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab2
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: de91c83386f01fd4c97d62fd86e888c6
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab3
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27f9a1aca6f58b24f9ed7c68abadebcc
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab4
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31f7129b4d9a1224bbbde7353f69bc43
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab5
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e2f277595bba3324a9e775ded1af260f
     m_Address: Assets/Game/AssetDynamic/AI/ai1001
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 351904ccfacb7cd4fbe4a4b44331d162, type: 2}
   m_SchemaSet:

@@ -4,27 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 [TaskCategory("Game")]
 [TaskDescription("AI ID")]
-public class Z_Run : BaseAction
+public class Z_Idle : BaseAction
 {
     private Animator _animator;
-    private ZBoxTrigger _boxTrigger;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
-        _boxTrigger = GetComponent<ZBoxTrigger>();
     }
     public override void OnStart()
     {
 
     }
-    List<ZBoxTrigger> zBoxTriggers;
+
     public override TaskStatus OnUpdate()
     {
-        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, 2f);
-        if (zBoxTriggers.Count > 0)
-        {
-            Owner.SendEvent(Const_BattleEvent.event_fight_fight);
-        }
         return TaskStatus.Running;
     }
 }

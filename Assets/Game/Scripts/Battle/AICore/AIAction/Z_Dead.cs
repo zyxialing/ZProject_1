@@ -9,8 +9,7 @@ public class Z_Dead : Action
     private TaskStatus taskStatus;
     public override void OnStart()
     {
-        taskStatus = TaskStatus.Running;
-        StartCoroutine(IdelAnim());
+
     }
 
     public override TaskStatus OnUpdate()

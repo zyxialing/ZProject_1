@@ -7,28 +7,23 @@ using UnityEngine;
 public class Z_Birth : BaseAction
 {
     private TaskStatus taskStatus;
-    public bool isEnterLevel = false;
-
     private Animator _animator;
+    private TestAI _testAI;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
+        _testAI = GetComponent<TestAI>();
     }
     public override void OnStart()
     {
-        _time = 0;
-        if (isEnterLevel)
+        if (_testAI.heroAttr.IsEnterGame)
         {
-            taskStatus = TaskStatus.Success;
+            _time = 3f;
         }
         else
         {
-            taskStatus = TaskStatus.Running;
-            _animator.SetInteger("state", 0);
-            LoopEva.loopEva.mapSpeed = 0f;
-            isEnterLevel = true;
+            _time = 0f;
         }
-
     }
 
     public override TaskStatus OnUpdate()
@@ -39,9 +34,14 @@ public class Z_Birth : BaseAction
 
     public override void DealTimeEvent()
     {
-        if (_time > 3f)
+        if (_time >= 3f)
         {
-            taskStatus = TaskStatus.Success;
+            _testAI.heroAttr.IsEnterGame = true;
+            taskStatus = TaskStatus.Failure;
+        }
+        else
+        {
+            taskStatus = TaskStatus.Running;
         }
     }
 }

@@ -9,15 +9,18 @@ public class Z_Fight : BaseAction
     private TaskStatus taskStatus;
     private Animator _animator;
     private ZBoxTrigger _boxTrigger;
+    private TestAI _testAI;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
+        _boxTrigger = GetComponent<ZBoxTrigger>();
+        _testAI = GetComponent<TestAI>();
     }
     public override void OnStart()
     {
-        _time = 0;
         LoopEva.loopEva.mapSpeed = 0f;
-        _animator.SetInteger("state", 2);
+        _animator.Play(Const_BattleAnim.anim_attack1,0,0);
+        //anims = _animator.GetCurrentAnimatorClipInfo(0);
         taskStatus = TaskStatus.Running;
     }
     List<ZBoxTrigger> zBoxTriggers;
