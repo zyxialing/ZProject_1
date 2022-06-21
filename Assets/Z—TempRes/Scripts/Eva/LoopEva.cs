@@ -9,7 +9,7 @@ public class LoopEva : EvaMono
     public static LoopEva loopEva;
     public List<Transform> mapTransforms;
     [Range(0, 1)]
-    public float mapSpeed = 1;
+    public float mapSpeed = 0.1f;
     [Header("后期调整好值后可以去除该参数")]
     public float limitMapSpeed = 1;
     private int curHeadIndex;

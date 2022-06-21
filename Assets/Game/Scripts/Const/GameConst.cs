@@ -9,7 +9,7 @@
 
 public class Const_BattleAnim
 {
-    public const string anim_empty = "anim_empty";
+    public const string anim_birth = "anim_birth";
     public const string anim_dead = "anim_dead";
     public const string anim_idle = "anim_idle";
     public const string anim_run = "anim_run";

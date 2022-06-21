@@ -15,7 +15,8 @@ public class Z_Run : BaseAction
     }
     public override void OnStart()
     {
-
+        LoopEva.loopEva.mapSpeed = 0.1f;
+        _animator.Play(Const_BattleAnim.anim_run, 0, 0);
     }
     List<ZBoxTrigger> zBoxTriggers;
     public override TaskStatus OnUpdate()

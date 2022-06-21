@@ -3,18 +3,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class TestAI : MonoBehaviour
 {
+    [HideInInspector]
     public Animator animator;
     public HeroAttr heroAttr;
     public AnimData animData;
+
+    private Action _animCallBack;
+    private float _keepEpiphanyTime;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         heroAttr = new HeroAttr();
-        animData = new AnimData(animator);
+        animData = new AnimData(animator,this);
     }
 
     void Start()
@@ -25,26 +30,38 @@ public class TestAI : MonoBehaviour
         });
     }
 
-
-    public void anim_attack1CallBack()
+    public void Play(string name, Action callBack = null , float AnimEpiphanyNormalizedTime = -1,float keepEpiphanyTime = 0)
     {
-        animator.Play(Const_BattleAnim.anim_attack1, 0, 0);
+        _animCallBack = callBack;
+        _keepEpiphanyTime = keepEpiphanyTime;
+        animator.Play(name,0,0);
+        AnimationClip anim = animData.GetAnim(name);
+        if (AnimEpiphanyNormalizedTime > 0)
+        {
+            this.Invoke("AnimEpiphany", anim.length * AnimEpiphanyNormalizedTime);
+        }
+        this.Invoke("AnimCallBack", anim.length + keepEpiphanyTime);
     }
-    
 
-    public void anim_attack2CallBack()
+    public void AnimCallBack()
     {
-        animator.Play(Const_BattleAnim.anim_attack2, 0, 0);
+        _animCallBack?.Invoke();
     }
 
-    public void anim_idleCallBack()
+    public void AnimEpiphany()
     {
-
+        animator.speed = 0;
+        Invoke("ResetSpeed", _keepEpiphanyTime);
     }
-    public void anim_deadCallBack()
+
+    public void ResetSpeed()
     {
-
+        animator.speed = 1;
     }
+
+
+
+
 }
 
 public class HeroAttr
@@ -55,10 +72,12 @@ public class HeroAttr
 
 public class AnimData
 {
+    public MonoBehaviour aiMono;
     public Animator animator;
     public Dictionary<string, AnimationClip> animMap;
-    public AnimData(Animator animator)
+    public AnimData(Animator animator,MonoBehaviour aiMono)
     {
+        this.aiMono = aiMono;
         this.animator = animator;
         var anims = this.animator.runtimeAnimatorController.animationClips;
         animMap = new Dictionary<string, AnimationClip>();
@@ -67,7 +86,6 @@ public class AnimData
             if (!animMap.ContainsKey(item.name))
             {
                 animMap.Add(item.name, item);
-                SetOnCompleted(item.name);
             }
             else
             {
@@ -76,14 +94,13 @@ public class AnimData
         }
     }
 
-    public void SetOnCompleted(string animName)
+    public AnimationClip GetAnim(string name)
     {
-        if (animMap.ContainsKey(animName))
+        if (animMap.ContainsKey(name))
         {
-            AnimationEvent animationEvent = new AnimationEvent();
-            animationEvent.time = animMap[animName].length;
-            animationEvent.functionName = animName + "CallBack";
-            animMap[animName].AddEvent(animationEvent);
+            return animMap[name];
         }
+        Debug.LogError(name + "ЮЊПе");
+        return null;
     }
 }

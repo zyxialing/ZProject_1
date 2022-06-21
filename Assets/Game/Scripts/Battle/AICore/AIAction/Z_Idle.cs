@@ -13,7 +13,7 @@ public class Z_Idle : BaseAction
     }
     public override void OnStart()
     {
-
+        LoopEva.loopEva.mapSpeed = 0f;
     }
 
     public override TaskStatus OnUpdate()

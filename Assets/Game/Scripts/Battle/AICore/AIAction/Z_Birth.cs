@@ -16,6 +16,8 @@ public class Z_Birth : BaseAction
     }
     public override void OnStart()
     {
+        LoopEva.loopEva.mapSpeed = 0f;
+        _animator.Play(Const_BattleAnim.anim_birth, 0, 0);
         if (_testAI.heroAttr.IsEnterGame)
         {
             _time = 3f;

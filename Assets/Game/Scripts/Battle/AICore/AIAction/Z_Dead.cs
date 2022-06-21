@@ -9,7 +9,7 @@ public class Z_Dead : Action
     private TaskStatus taskStatus;
     public override void OnStart()
     {
-
+        LoopEva.loopEva.mapSpeed = 0f;
     }
 
     public override TaskStatus OnUpdate()
