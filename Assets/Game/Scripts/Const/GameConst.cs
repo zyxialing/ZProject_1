@@ -7,7 +7,7 @@
     public const string event_fight_run = "event_fight_run";
 }
 
-public class Const_BattleAnim
+public class Const_BattleAnim_Name
 {
     public const string anim_birth = "anim_birth";
     public const string anim_dead = "anim_dead";
@@ -15,4 +15,15 @@ public class Const_BattleAnim
     public const string anim_run = "anim_run";
     public const string anim_attack1 = "anim_attack1";
     public const string anim_attack2 = "anim_attack2";
+}
+
+public class Const_BattleAnim_State
+{
+    public const int birth = 1;
+    public const int idle = 0;
+    public const int run = 2;
+    public const int anim_attack1 = 3;
+    public const int anim_attack2 = 4;
+    public const int dead = 11;
+
 }

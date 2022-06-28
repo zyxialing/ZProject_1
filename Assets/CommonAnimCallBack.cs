@@ -16,16 +16,16 @@ public class CommonAnimCallBack : MonoBehaviour
     {
         switch (name)
         {
-            case Const_BattleAnim.anim_attack1:
+            case Const_BattleAnim_Name.anim_attack1:
                 animAttack1 = callback;
                 break;
-            case Const_BattleAnim.anim_attack2:
+            case Const_BattleAnim_Name.anim_attack2:
                 animAttack2 = callback;
                 break;
-            case Const_BattleAnim.anim_dead:
+            case Const_BattleAnim_Name.anim_dead:
                 animDead = callback;
                 break;
-            case Const_BattleAnim.anim_birth:
+            case Const_BattleAnim_Name.anim_birth:
                 animBirth = callback;
                 break;
         }

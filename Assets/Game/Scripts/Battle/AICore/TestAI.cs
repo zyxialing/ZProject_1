@@ -12,8 +12,10 @@ public class TestAI : MonoBehaviour
     public HeroAttr heroAttr;
     public AnimData animData;
 
-    private Action _animCallBack;
-    private float _keepEpiphanyTime;
+    private Action _animProgressCallBack;
+    private Action _animEndCallBack;
+    private float _progressTime;
+    private float _endTime;
 
     private void Awake()
     {
@@ -29,35 +31,94 @@ public class TestAI : MonoBehaviour
             AIAgent aIAgent = new AIAgent(gameObject, ai);
         });
     }
-
-    public void Play(string name, Action callBack = null , float AnimEpiphanyNormalizedTime = -1,float keepEpiphanyTime = 0)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="name">动画名称</param>
+    /// <param name="callBack">动画完成回调</param>
+    /// <param name="normalBackTime">回调提前进度（0-1）</param>
+    /// <param name="AnimEpiphanyNormalizedTime">卡顿点（0-1）</param>
+    /// <param name="keepEpiphanyTime">卡顿时长</param>
+    public void Play(string animName,float speed = 1f,Action bpCallBack = null,float backProgress = 1f,Action endCallBack = null,bool isLoop = false)
     {
-        _animCallBack = callBack;
-        _keepEpiphanyTime = keepEpiphanyTime;
-        animator.Play(name,0,0);
-        AnimationClip anim = animData.GetAnim(name);
-        if (AnimEpiphanyNormalizedTime > 0)
+        int state = 0;
+        switch (animName)
         {
-            this.Invoke("AnimEpiphany", anim.length * AnimEpiphanyNormalizedTime);
+            case Const_BattleAnim_Name.anim_birth:
+                state = Const_BattleAnim_State.birth;
+            break;
+            case Const_BattleAnim_Name.anim_idle:
+                state = Const_BattleAnim_State.idle;
+            break;
+            case Const_BattleAnim_Name.anim_dead:
+                state = Const_BattleAnim_State.dead;
+            break;
+            case Const_BattleAnim_Name.anim_run:
+                state = Const_BattleAnim_State.run;
+            break;
+            case Const_BattleAnim_Name.anim_attack1:
+                state = Const_BattleAnim_State.anim_attack1;
+            break;
+            case Const_BattleAnim_Name.anim_attack2:
+                state = Const_BattleAnim_State.anim_attack2;
+            break;
         }
-        this.Invoke("AnimCallBack", anim.length + keepEpiphanyTime);
+        if(animator.GetInteger("name")== state)
+        {
+            return;
+        }
+        animator.SetInteger("name",state);
+        this.CancelInvoke();
+        animator.speed = speed;
+        _animProgressCallBack = bpCallBack;
+        _animEndCallBack = endCallBack;
+        AnimationClip anim = animData.GetAnim(animName);
+        var localSpeed = 1f / animator.speed;
+        _progressTime = anim.length * localSpeed * backProgress;
+        _endTime = anim.length * localSpeed;
+        if (isLoop)
+        {
+            this.InvokeRepeating("AnimCallStart", 0, _endTime);
+        }
+        else
+        {
+            this.Invoke("AnimCallStart", 0);
+        }
+    }
+
+    public float GetAnimLength(string animName,float speed)
+    {
+        AnimationClip anim = animData.GetAnim(animName);
+        var localSpeed = 1f / speed;
+        return anim.length * localSpeed;
+    }
+
+    public void AnimCallStart()
+    {
+        this.Invoke("AnimCallBack", _progressTime);
+        this.Invoke("AnimCallBack2", _endTime);
     }
 
     public void AnimCallBack()
     {
-        _animCallBack?.Invoke();
+        _animProgressCallBack?.Invoke();
+    }
+    
+    public void AnimCallBack2()
+    {
+        _animEndCallBack?.Invoke();
     }
 
-    public void AnimEpiphany()
-    {
-        animator.speed = 0;
-        Invoke("ResetSpeed", _keepEpiphanyTime);
-    }
+    //public void AnimEpiphany()
+    //{
+    //    animator.speed = 0;
+    //    Invoke("ResetSpeed", _keepEpiphanyTime);
+    //}
 
-    public void ResetSpeed()
-    {
-        animator.speed = 1;
-    }
+    //public void ResetSpeed()
+    //{
+    //    animator.speed = 1;
+    //}
 
 
 
@@ -67,6 +128,8 @@ public class TestAI : MonoBehaviour
 public class HeroAttr
 {
     public int Hp = 100;
+    public float EnterFightDistance = 4f;
+    public float EnterAttackDistance = 4f;
     public bool IsEnterGame = false;
 }
 
