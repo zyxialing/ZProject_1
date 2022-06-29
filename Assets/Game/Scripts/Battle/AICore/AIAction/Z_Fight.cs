@@ -23,6 +23,7 @@ public class Z_Fight : BaseAction
     {
         LoopEva.loopEva.mapSpeed = 0f;
         isCD = false;
+        _time = 9999f;
         //anims = _animator.GetCurrentAnimatorClipInfo(0);
         taskStatus = TaskStatus.Running;
     }
@@ -43,9 +44,9 @@ public class Z_Fight : BaseAction
 
     public override void DealTimeEvent()
     {
-        if (!isCD && _time >= 0f)
+        if (!isCD && _time >= _testAI.heroAttr.AttackInterval)
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_attack1, 3f, ProgressBack,0.5f, FightCallBack, true);
+            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.AttackSpeed, ProgressBack,0.5f, FightCallBack, true);
             isCD = true;
         }
     }
@@ -58,14 +59,14 @@ public class Z_Fight : BaseAction
     {
         _time = 0;
         isCD = false;
-        if (!isCD && _time >= 0f)
+        if (!isCD && _time >= _testAI.heroAttr.AttackInterval)
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_attack1, 3f, ProgressBack, 0.5f, FightCallBack, true);
+            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.AttackSpeed, ProgressBack, 0.5f, FightCallBack, true);
             isCD = true;
         }
         else
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_idle, 3f);
+            _testAI.Play(Const_BattleAnim_Name.anim_idle);
         }
     }
 

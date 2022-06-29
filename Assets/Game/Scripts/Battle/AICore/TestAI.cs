@@ -26,10 +26,8 @@ public class TestAI : MonoBehaviour
 
     void Start()
     {
-        AIUtils.SafeGetExternalBehavior("Assets/Game/AssetDynamic/AI/ai1001", (ai) =>
-        {
-            AIAgent aIAgent = new AIAgent(gameObject, ai);
-        });
+        var ai = AIUtils.GetExternalBehavior("Assets/Game/AssetDynamic/AI/ai1001");
+        AIAgent aIAgent = new AIAgent(gameObject, ai);
     }
     /// <summary>
     /// 
@@ -128,8 +126,10 @@ public class TestAI : MonoBehaviour
 public class HeroAttr
 {
     public int Hp = 100;
-    public float EnterFightDistance = 4f;
-    public float EnterAttackDistance = 4f;
+    public float EnterFightDistance = 2f;
+    public float EnterAttackDistance = 2f;
+    public float AttackInterval = 2f;
+    public float AttackSpeed = 1f;
     public bool IsEnterGame = false;
 }
 

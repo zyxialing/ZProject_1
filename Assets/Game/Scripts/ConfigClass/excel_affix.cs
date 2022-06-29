@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
+using UnityEngine;
 using ZFramework;
 
 namespace Table {
@@ -53,14 +54,12 @@ namespace Table {
             set { if (string.IsNullOrEmpty(value)) desc = 0; else desc = int.Parse(value); }
         }
 
-        public void LoadBytes<T>(Action<List<T>> callBack)
+        public List<T> LoadBytes<T>()
         {
             string bytesPath = "Assets/Game/AssetDynamic/ConfigBytes/excel_affix";
-            TextAssetUtils.SafeGetTextAsset(bytesPath, (asset) =>
-            {
-                List<T> excel_affixs = DeserializeData<T>(asset);
-                callBack?.Invoke(excel_affixs);
-            });
+             TextAsset asset = TextAssetUtils.GetTextAsset(bytesPath);
+            List<T> excel_affixs = DeserializeData<T>(asset);
+            return excel_affixs;
         }
 
          private List<T> DeserializeData<T>(UnityEngine.TextAsset textAsset)

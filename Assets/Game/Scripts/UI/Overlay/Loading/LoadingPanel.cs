@@ -9,7 +9,7 @@ using static ResHanderManager;
 
 public partial class LoadingPanel : BasePanel
 {
-    ResHanderMono resHanderMono;
+
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -19,7 +19,7 @@ public partial class LoadingPanel : BasePanel
 
     public override void OnShowing()
     {
-        resHanderMono = ResHanderManager.Instance.Init();
+
     }
 
     public override void OnOpen()
@@ -40,7 +40,16 @@ public partial class LoadingPanel : BasePanel
     private IEnumerator LoadRes()
     {
         slider_LoadingBar.value = 0;
-        yield return resHanderMono.InitCommonAudioRes();
+        AdressablePath adressablePath = Resources.Load<AdressablePath>(typeof(AdressablePath).ToString());
+        bool loadCompleted = false;
+        ResHanderManager.Instance.PreloadAudioAssets(adressablePath.commonAudioPaths,()=> {
+            loadCompleted = true;
+        });
+
+        while (!loadCompleted)
+        {
+            yield return null;
+        }
         UpdateProgress(0.1f);
         float progress = 0.2f;
         yield return LoadExcel();
@@ -70,19 +79,19 @@ public partial class LoadingPanel : BasePanel
 
     private IEnumerator LoadExcel()
     {
-        int tabelCount = 0;
-        Config<excel_affix>.InitConfig((data) => { tabelCount++; });
-        Config<excel_character>.InitConfig((data) => { tabelCount++; });
-        Config<excel_equip>.InitConfig((data) => { tabelCount++; });
-        Config<excel_language>.InitConfig((data) => { tabelCount++; });
-        Config<excel_material>.InitConfig((data) => { tabelCount++; });
-        Config<excel_prop>.InitConfig((data) => { tabelCount++; });
-        while (tabelCount<6)
-        {
-            yield return null;
-        }
-      
 
+        Config<excel_affix>.InitConfig();
+        yield return null;
+        Config<excel_character>.InitConfig();
+        yield return null;
+        Config<excel_equip>.InitConfig();
+        yield return null;
+        Config<excel_language>.InitConfig();
+        yield return null;
+        Config<excel_material>.InitConfig();
+        yield return null;
+        Config<excel_prop>.InitConfig();
+        yield return null;
     }
     private void UpdateProgress(float progress)
     {
@@ -93,9 +102,8 @@ public partial class LoadingPanel : BasePanel
     private void EnterGame()
     {
         UIManager.Instance.OpenPanel<TopBanner>();
-        UIManager.Instance.OpenPanel<MainPanel>(()=> {
-            Close();
-        });
+        UIManager.Instance.OpenPanel<MainPanel>();
+        Close();
     }
 
     public void Update()

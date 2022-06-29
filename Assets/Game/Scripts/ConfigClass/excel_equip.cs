@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
+using UnityEngine;
 using ZFramework;
 
 namespace Table {
@@ -87,14 +88,12 @@ namespace Table {
             set{ if (string.IsNullOrEmpty(value)) skill = new List<int>();else skill = ZStringUtil.ArrayStringToIntList(value.Split(Excel2CsBytesTool.ArrayTypeSplitChar));}
         }
 
-        public void LoadBytes<T>(Action<List<T>> callBack)
+        public List<T> LoadBytes<T>()
         {
             string bytesPath = "Assets/Game/AssetDynamic/ConfigBytes/excel_equip";
-            TextAssetUtils.SafeGetTextAsset(bytesPath, (asset) =>
-            {
-                List<T> excel_equips = DeserializeData<T>(asset);
-                callBack?.Invoke(excel_equips);
-            });
+             TextAsset asset = TextAssetUtils.GetTextAsset(bytesPath);
+            List<T> excel_equips = DeserializeData<T>(asset);
+            return excel_equips;
         }
 
          private List<T> DeserializeData<T>(UnityEngine.TextAsset textAsset)

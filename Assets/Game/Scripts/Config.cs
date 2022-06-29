@@ -6,10 +6,10 @@ using UnityEngine;
 public class Config<T> where T :IConfig
 {
     private static Dictionary<string, List<T>> excelDatas = new Dictionary<string, List<T>>();
-    public static void InitConfig(Action<List<T>> callBack)
+    public static List<T> InitConfig()
     {
         T t = Activator.CreateInstance<T>();
-        t.LoadBytes(callBack);
+        return t.LoadBytes<T>();
     }
 
     public static void AddExcelToDic(string name,List<T> excelData)
