@@ -152,6 +152,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 452cba7668bc6e14295e572ba4cfc831
+    m_Address: Assets/Game/AssetDynamic/AI/ai1002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 351904ccfacb7cd4fbe4a4b44331d162, type: 2}
   m_SchemaSet:

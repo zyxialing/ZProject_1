@@ -9,6 +9,7 @@ public class ZBoxTrigger : MonoBehaviour
     [SerializeField]
     private Vector3 size;
     public ZTriggerType triggerType;
+    public ZTriggerCamp triggerCamp;
     public Vector3 Size { get => size; set => size = value; }
     public Vector3 Center { get => transform.position+center; set => center = value; }
     private void OnEnable()

@@ -23,7 +23,7 @@ public class Z_Run : BaseAction
     List<ZBoxTrigger> zBoxTriggers;
     public override TaskStatus OnUpdate()
     {
-        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.EnterFightDistance);
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.EnterFightDistance,true);
         if (zBoxTriggers.Count > 0)
         {
             Owner.SendEvent(Const_BattleEvent.event_fight_fight);

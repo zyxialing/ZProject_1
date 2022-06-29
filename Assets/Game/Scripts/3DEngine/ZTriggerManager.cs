@@ -38,13 +38,13 @@ public class ZTriggerManager : Singleton<ZTriggerManager>
     /// <param name="org"></param>
     /// <param name="distance"></param>
     /// <returns></returns>
-    public List<ZBoxTrigger> GetTriggersByDistance(ZBoxTrigger org,float distance)
+    public List<ZBoxTrigger> GetTriggersByDistance(ZBoxTrigger org,float distance,bool ignoreSelfCamp)
     {
         _tempList1.Clear();
         List<ZBoxTrigger> triggers = _dicTriggers[ZTriggerType.UnitTrigger];
         for (int i = 0; i < triggers.Count; i++)
         {
-          if(triggers[i]!= org && triggers[i].GetDistance(org) <= distance)
+          if(triggers[i]!= org && triggers[i].triggerCamp!= org.triggerCamp && triggers[i].GetDistance(org) <= distance)
             {
                 _tempList1.Add(triggers[i]);
             }
@@ -57,9 +57,9 @@ public class ZTriggerManager : Singleton<ZTriggerManager>
     /// <param name="nUTrigger"></param>
     /// <param name="distance"></param>
     /// <returns></returns>
-    public List<ZBoxTrigger> TriggerEnterByRange(ZBoxTrigger nUTrigger,float distance)
+    public List<ZBoxTrigger> TriggerEnterByRange(ZBoxTrigger nUTrigger,float distance, bool ignoreSelfCamp)
     {
-        List<ZBoxTrigger> list = GetTriggersByDistance(nUTrigger, distance);
+        List<ZBoxTrigger> list = GetTriggersByDistance(nUTrigger, distance, ignoreSelfCamp);
         _tempList2.Clear();
         for (int i = 0; i < list.Count; i++)
         {

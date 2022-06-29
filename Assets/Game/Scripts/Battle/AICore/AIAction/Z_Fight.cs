@@ -11,7 +11,6 @@ public class Z_Fight : BaseAction
     private Animator _animator;
     private ZBoxTrigger _boxTrigger;
     private TestAI _testAI;
-    private CommonAnimCallBack _commonAnimCallBack;
     private bool isCD = true;
     public override void OnAwake()
     {
@@ -31,7 +30,7 @@ public class Z_Fight : BaseAction
     public override TaskStatus OnUpdate()
     {
         RecordTime();
-        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.EnterAttackDistance);
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.EnterAttackDistance,true);
         if (zBoxTriggers.Count > 0)
         {
             return TaskStatus.Running;
