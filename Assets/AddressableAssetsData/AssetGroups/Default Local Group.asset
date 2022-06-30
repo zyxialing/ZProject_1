@@ -17,13 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c7e71fccf2508564fbbc4c07c3ce6525
   m_SerializeEntries:
-  - m_GUID: 72b26b7e38dc24542b48ef322f553477
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_affix
+  - m_GUID: a67ff24d0321a334ab1ac74e5d3948f2
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_prop
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d605c76fa3d85644c87175d84f9f1762
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
+  - m_GUID: 72b26b7e38dc24542b48ef322f553477
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_affix
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -32,18 +32,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 89b761b35e977a64eb1acc6ed97dcca8
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_language
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 69460ad2eea76014aa6ad0c76c4d8d7e
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_material
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a67ff24d0321a334ab1ac74e5d3948f2
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_prop
+  - m_GUID: 89b761b35e977a64eb1acc6ed97dcca8
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_language
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d605c76fa3d85644c87175d84f9f1762
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -148,12 +148,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e2f277595bba3324a9e775ded1af260f
-    m_Address: Assets/Game/AssetDynamic/AI/ai1001
+    m_Address: Assets/Game/AssetDynamic/AI/150000
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 452cba7668bc6e14295e572ba4cfc831
-    m_Address: Assets/Game/AssetDynamic/AI/ai1002
+    m_Address: Assets/Game/AssetDynamic/AI/150001
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

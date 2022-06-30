@@ -30,7 +30,7 @@ public class Z_Fight : BaseAction
     public override TaskStatus OnUpdate()
     {
         RecordTime();
-        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.EnterAttackDistance,true);
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.GetAttackRange(),true);
         if (zBoxTriggers.Count > 0)
         {
             return TaskStatus.Running;
@@ -43,9 +43,9 @@ public class Z_Fight : BaseAction
 
     public override void DealTimeEvent()
     {
-        if (!isCD && _time >= _testAI.heroAttr.AttackInterval)
+        if (!isCD && _time >= _testAI.heroAttr.GetAttackInterval())
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.AttackSpeed, ProgressBack,0.5f, FightCallBack, true);
+            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack,0.5f, FightCallBack, true);
             isCD = true;
         }
     }
@@ -58,9 +58,9 @@ public class Z_Fight : BaseAction
     {
         _time = 0;
         isCD = false;
-        if (!isCD && _time >= _testAI.heroAttr.AttackInterval)
+        if (!isCD && _time >= _testAI.heroAttr.GetAttackInterval())
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.AttackSpeed, ProgressBack, 0.5f, FightCallBack, true);
+            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack, 0.5f, FightCallBack, true);
             isCD = true;
         }
         else

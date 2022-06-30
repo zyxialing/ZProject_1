@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using Table;
 
 public class TestAI : MonoBehaviour
 {
@@ -20,13 +21,14 @@ public class TestAI : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        heroAttr = new HeroAttr();
         animData = new AnimData(animator,this);
     }
 
     void Start()
     {
-        var ai = AIUtils.GetExternalBehavior("Assets/Game/AssetDynamic/AI/ai1001");
+        excel_character character = ExcelConfig.Get_excel_character(150000);
+        heroAttr = new HeroAttr(character);
+        var ai = AIUtils.GetExternalBehavior(character.path);
         AIAgent aIAgent = new AIAgent(gameObject, ai);
     }
     /// <summary>
@@ -123,15 +125,6 @@ public class TestAI : MonoBehaviour
 
 }
 
-public class HeroAttr
-{
-    public int Hp = 100;
-    public float EnterFightDistance = 2f;
-    public float EnterAttackDistance = 2f;
-    public float AttackInterval = 2f;
-    public float AttackSpeed = 1f;
-    public bool IsEnterGame = false;
-}
 
 public class AnimData
 {

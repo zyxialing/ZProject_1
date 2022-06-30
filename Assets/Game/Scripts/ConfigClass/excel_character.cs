@@ -22,36 +22,47 @@ namespace Table {
         }
 
         /// <summary>
-        /// 中文
+        /// 名字
         /// </summary>
         [XmlIgnore]
-        public string ch;
-        [XmlAttribute("ch")]
-        public string _ch {
-            get { return ch.ToString(); }
-            set { if (string.IsNullOrEmpty(value)) ch = ""; else ch = value; }
+        public int name;
+        [XmlAttribute("name")]
+        public string _name {
+            get { return name.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) name = 0; else name = int.Parse(value); }
         }
 
         /// <summary>
-        /// 英文
+        /// 基础血量
         /// </summary>
         [XmlIgnore]
-        public string en;
-        [XmlAttribute("en")]
-        public string _en {
-            get { return en.ToString(); }
-            set { if (string.IsNullOrEmpty(value)) en = ""; else en = value; }
+        public int hp;
+        [XmlAttribute("hp")]
+        public string _hp {
+            get { return hp.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) hp = 0; else hp = int.Parse(value); }
         }
 
         /// <summary>
-        /// 日语
+        /// 入战范围
         /// </summary>
         [XmlIgnore]
-        public string js;
-        [XmlAttribute("js")]
-        public string _js {
-            get { return js.ToString(); }
-            set { if (string.IsNullOrEmpty(value)) js = ""; else js = value; }
+        public float attackRange;
+        [XmlAttribute("attackRange")]
+        public string _attackRange {
+            get { return attackRange.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) attackRange = 0; else attackRange = float.Parse(value); }
+        }
+
+        /// <summary>
+        /// 路径
+        /// </summary>
+        [XmlIgnore]
+        public string path;
+        [XmlAttribute("path")]
+        public string _path {
+            get { return path.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) path = ""; else path = value; }
         }
 
         public List<T> LoadBytes<T>()

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allexcel_equip>
+<excel_equips>
+	<excel_equip id="1" name="10000" type="1" icon="hanbingjian.prefab" desc="20001" attr="30000-30001" skill="">
+	</excel_equip>
+	<excel_equip id="2" name="10001" type="2" icon="qlyyd.prefab" desc="20002" attr="" skill="">
+	</excel_equip>
+	<excel_equip id="3" name="10002" type="3" icon="xx.prefab" desc="20003" attr="" skill="">
+	</excel_equip>
+</excel_equips>
+</allexcel_equip>

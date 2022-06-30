@@ -18,7 +18,7 @@ public class Z_Birth : BaseAction
     {
         LoopEva.loopEva.mapSpeed = 0f;
         _testAI.Play(Const_BattleAnim_Name.anim_birth);
-        if (_testAI.heroAttr.IsEnterGame)
+        if (_testAI.heroAttr.isEnterGame)
         {
             _time = 3f;
         }
@@ -38,7 +38,7 @@ public class Z_Birth : BaseAction
     {
         if (_time >= 3f)
         {
-            _testAI.heroAttr.IsEnterGame = true;
+            _testAI.heroAttr.isEnterGame = true;
             taskStatus = TaskStatus.Failure;
         }
         else
