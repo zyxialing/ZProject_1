@@ -8,6 +8,8 @@ using Table;
 
 public class TestAI : MonoBehaviour
 {
+    public int id = 150000;
+    public bool isAI = true;
     [HideInInspector]
     public Animator animator;
     public HeroAttr heroAttr;
@@ -26,7 +28,7 @@ public class TestAI : MonoBehaviour
 
     void Start()
     {
-        excel_character character = ExcelConfig.Get_excel_character(150000);
+        excel_character character = ExcelConfig.Get_excel_character(id);
         heroAttr = new HeroAttr(character);
         var ai = AIUtils.GetExternalBehavior(character.path);
         AIAgent aIAgent = new AIAgent(gameObject, ai);

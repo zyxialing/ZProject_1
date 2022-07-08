@@ -55,6 +55,28 @@ namespace Table {
         }
 
         /// <summary>
+        /// 攻击频率
+        /// </summary>
+        [XmlIgnore]
+        public float attackFrequency;
+        [XmlAttribute("attackFrequency")]
+        public string _attackFrequency {
+            get { return attackFrequency.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) attackFrequency = 0; else attackFrequency = float.Parse(value); }
+        }
+
+        /// <summary>
+        /// 是否有暴击动画
+        /// </summary>
+        [XmlIgnore]
+        public bool criticalHitAnim;
+        [XmlAttribute("criticalHitAnim")]
+        public string _criticalHitAnim {
+            get { return criticalHitAnim.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) criticalHitAnim = false; else criticalHitAnim = bool.Parse(value); }
+        }
+
+        /// <summary>
         /// 路径
         /// </summary>
         [XmlIgnore]

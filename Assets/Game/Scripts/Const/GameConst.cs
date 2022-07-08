@@ -13,8 +13,8 @@ public class Const_BattleAnim_Name
     public const string anim_dead = "anim_dead";
     public const string anim_idle = "anim_idle";
     public const string anim_run = "anim_run";
-    public const string anim_attack1 = "anim_attack1";
-    public const string anim_attack2 = "anim_attack2";
+    public const string anim_attack1 = "anim_attack1";//普通攻击
+    public const string anim_attack2 = "anim_attack2";//暴击
 }
 
 public class Const_BattleAnim_State

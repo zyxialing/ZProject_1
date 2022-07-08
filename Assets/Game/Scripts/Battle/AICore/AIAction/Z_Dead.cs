@@ -7,9 +7,17 @@ using UnityEngine;
 public class Z_Dead : Action
 {
     private TaskStatus taskStatus;
+    private TestAI _testAI;
+    public override void OnAwake()
+    {
+        _testAI = GetComponent<TestAI>();
+    }
     public override void OnStart()
     {
-        LoopEva.loopEva.mapSpeed = 0f;
+        if (!_testAI.isAI)
+        {
+            LoopEva.loopEva.mapSpeed = 0f;
+        }
     }
 
     public override TaskStatus OnUpdate()

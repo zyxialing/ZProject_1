@@ -17,7 +17,10 @@ public class Z_Run : BaseAction
     }
     public override void OnStart()
     {
-        LoopEva.loopEva.mapSpeed = 0.1f;
+        if (!_testAI.isAI)
+        {
+            LoopEva.loopEva.mapSpeed = 0.1f;
+        }
         _testAI.Play(Const_BattleAnim_Name.anim_run);
     }
     List<ZBoxTrigger> zBoxTriggers;

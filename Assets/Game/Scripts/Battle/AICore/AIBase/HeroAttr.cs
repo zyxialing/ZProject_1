@@ -9,9 +9,8 @@ public class HeroAttr
     public int name;
     public int hp;
     public float attackRange = 2f;
-    public float attackInterval = 2f;
-    public float attackSpeed = 1f;
-
+    public float attackFrequency = 1f;
+    public bool criticalHitAnim;
     public bool isEnterGame = false;
 
     public HeroAttr(excel_character character)
@@ -19,6 +18,8 @@ public class HeroAttr
         id = character.id;
         name = character.name;
         hp = character.hp;
+        attackFrequency = character.attackFrequency;
+        criticalHitAnim = character.criticalHitAnim;
         attackRange = character.attackRange;
     }
 
@@ -44,11 +45,26 @@ public class HeroAttr
 
     public float GetAttackInterval()
     {
+        float attackInterval = 3 - attackFrequency;
+        if (attackInterval < 0)
+        {
+            attackInterval = 0;
+        }
         return attackInterval;
     }
 
     public float GetAttackSpeed()
     {
+        float attackSpeed =  attackFrequency - 2;
+        if (attackSpeed < 1)
+        {
+            attackSpeed = 1;
+        }
         return attackSpeed;
+    }
+
+    public bool GetCriticalHitAnim()
+    {
+        return criticalHitAnim;
     }
 }

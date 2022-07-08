@@ -3,6 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 [TaskCategory("Game")]
 [TaskDescription("AI ID")]
 public class Z_Fight : BaseAction
@@ -11,6 +13,7 @@ public class Z_Fight : BaseAction
     private Animator _animator;
     private ZBoxTrigger _boxTrigger;
     private TestAI _testAI;
+    private HitData _hitData;
     private bool isCD = true;
     public override void OnAwake()
     {
@@ -20,7 +23,10 @@ public class Z_Fight : BaseAction
     }
     public override void OnStart()
     {
-        LoopEva.loopEva.mapSpeed = 0f;
+        if (!_testAI.isAI)
+        {
+            LoopEva.loopEva.mapSpeed = 0f;
+        }
         isCD = false;
         _time = 9999f;
         //anims = _animator.GetCurrentAnimatorClipInfo(0);
@@ -52,7 +58,10 @@ public class Z_Fight : BaseAction
 
     private void ProgressBack()
     {
-        Debug.Log("xxxxxxxxxxxxxx");
+        if (_testAI.isAI)
+        {
+            Debug.Log("xxxxxxxxxxxxxx");
+        }
     }
     private void FightCallBack()
     {
@@ -60,7 +69,16 @@ public class Z_Fight : BaseAction
         isCD = false;
         if (!isCD && _time >= _testAI.heroAttr.GetAttackInterval())
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack, 0.5f, FightCallBack, true);
+            _hitData = new HitData(1);
+            if (_testAI.heroAttr.GetCriticalHitAnim()&&Random.Range(0,10)<5)
+            {
+                _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack, 0.5f, FightCallBack, true);
+            }
+            else
+            {
+                _hitData.isCriticalHit = true;
+                _testAI.Play(Const_BattleAnim_Name.anim_attack2, _testAI.heroAttr.GetAttackSpeed(), ProgressBack, 0.5f, FightCallBack, true);
+            }
             isCD = true;
         }
         else
