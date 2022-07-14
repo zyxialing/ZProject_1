@@ -8,8 +8,10 @@ public class Z_Dead : Action
 {
     private TaskStatus taskStatus;
     private TestAI _testAI;
+    private ZBoxTrigger _boxTrigger;
     public override void OnAwake()
     {
+        _boxTrigger = GetComponent<ZBoxTrigger>();
         _testAI = GetComponent<TestAI>();
     }
     public override void OnStart()
@@ -18,6 +20,10 @@ public class Z_Dead : Action
         {
             LoopEva.loopEva.mapSpeed = 0f;
         }
+        taskStatus = TaskStatus.Running;
+        Debug.Log("死亡");
+        _boxTrigger.enabled = false;
+        _testAI.Play(Const_BattleAnim_Name.anim_dead,1f,null,1f,endCallBack);
     }
 
     public override TaskStatus OnUpdate()
@@ -25,14 +31,10 @@ public class Z_Dead : Action
         return taskStatus;
     }
 
-    private IEnumerator IdelAnim()
+    private void endCallBack()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            Debug.Log("Idel播放中...");
-            yield return new WaitForSeconds(1f);
-        }
-        taskStatus = TaskStatus.Failure;
+        taskStatus = TaskStatus.Success;
+        _testAI.Clear();
     }
 
 }

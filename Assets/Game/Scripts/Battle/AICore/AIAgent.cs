@@ -19,4 +19,9 @@ public class AIAgent : IUnit
         _behaviorTree.RestartWhenComplete = true;
         _behaviorTree.ResetValuesOnRestart = true;
     }
+
+    public void SendEvent(string eventName)
+    {
+        _behaviorTree.SendEvent(eventName);
+    }
 }

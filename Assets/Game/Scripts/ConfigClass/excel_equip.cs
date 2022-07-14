@@ -74,7 +74,7 @@ namespace Table {
         [XmlAttribute("attr")]
         public string _attr {
             get { return attr.ToString(); }
-            set{ if (string.IsNullOrEmpty(value)) attr = new List<int>();else attr = ZStringUtil.ArrayStringToIntList(value.Split(Excel2CsBytesTool.ArrayTypeSplitChar));}
+            set{ if (string.IsNullOrEmpty(value)) attr = new List<int>();else attr = ZStringUtil.ArrayStringToIntList(value.Split('-'));}
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Table {
         [XmlAttribute("skill")]
         public string _skill {
             get { return skill.ToString(); }
-            set{ if (string.IsNullOrEmpty(value)) skill = new List<int>();else skill = ZStringUtil.ArrayStringToIntList(value.Split(Excel2CsBytesTool.ArrayTypeSplitChar));}
+            set{ if (string.IsNullOrEmpty(value)) skill = new List<int>();else skill = ZStringUtil.ArrayStringToIntList(value.Split('-'));}
         }
 
         public List<T> LoadBytes<T>()

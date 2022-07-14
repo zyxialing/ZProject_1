@@ -8,9 +8,13 @@ public class HeroAttr
     public int id;
     public int name;
     public int hp;
+    public int maxHp;
     public float attackRange = 2f;
     public float attackFrequency = 1f;
+    public float attackProgressBack;
     public bool criticalHitAnim;
+    public int criticalHitProbability;
+
     public bool isEnterGame = false;
 
     public HeroAttr(excel_character character)
@@ -18,9 +22,12 @@ public class HeroAttr
         id = character.id;
         name = character.name;
         hp = character.hp;
+        maxHp = character.hp;
         attackFrequency = character.attackFrequency;
         criticalHitAnim = character.criticalHitAnim;
         attackRange = character.attackRange;
+        attackProgressBack = character.attackProgressBack;
+        criticalHitProbability = 50;
     }
 
     public int GetId()
@@ -66,5 +73,29 @@ public class HeroAttr
     public bool GetCriticalHitAnim()
     {
         return criticalHitAnim;
+    }
+
+    public int GetCriticalHitProbability()
+    {
+        return criticalHitProbability;
+    }
+
+    public float GetAttackProgressBack()
+    {
+        return attackProgressBack;
+    }
+
+    public bool SetHp(int hurt)
+    {
+        hp += hurt;
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
+        if (hp < 0)
+        {
+            hp = 0;
+        }
+        return hp == 0;
     }
 }

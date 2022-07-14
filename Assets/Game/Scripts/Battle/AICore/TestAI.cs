@@ -14,11 +14,13 @@ public class TestAI : MonoBehaviour
     public Animator animator;
     public HeroAttr heroAttr;
     public AnimData animData;
+    public AIAgent aIAgent;
 
     private Action _animProgressCallBack;
     private Action _animEndCallBack;
     private float _progressTime;
     private float _endTime;
+
 
     private void Awake()
     {
@@ -31,7 +33,7 @@ public class TestAI : MonoBehaviour
         excel_character character = ExcelConfig.Get_excel_character(id);
         heroAttr = new HeroAttr(character);
         var ai = AIUtils.GetExternalBehavior(character.path);
-        AIAgent aIAgent = new AIAgent(gameObject, ai);
+        aIAgent = new AIAgent(gameObject, ai);
     }
     /// <summary>
     /// 
@@ -59,10 +61,13 @@ public class TestAI : MonoBehaviour
                 state = Const_BattleAnim_State.run;
             break;
             case Const_BattleAnim_Name.anim_attack1:
-                state = Const_BattleAnim_State.anim_attack1;
+                state = Const_BattleAnim_State.attack1;
             break;
             case Const_BattleAnim_Name.anim_attack2:
-                state = Const_BattleAnim_State.anim_attack2;
+                state = Const_BattleAnim_State.attack2;
+            break;
+            case Const_BattleAnim_Name.anim_dizzy:
+                state = Const_BattleAnim_State.dizzy;
             break;
         }
         if(animator.GetInteger("name")== state)
@@ -95,34 +100,42 @@ public class TestAI : MonoBehaviour
         return anim.length * localSpeed;
     }
 
-    public void AnimCallStart()
+    public void BeHurt(HitData hitData)
+    {
+
+       bool isDead = heroAttr.SetHp(hitData.hurt);
+        if (isDead)
+        {
+            aIAgent.SendEvent(Const_BattleEvent.event_fight_dead);
+        }
+        if (isAI)
+        {
+            Debug.Log(heroAttr.hp);
+        }
+    }
+
+    public void Clear()
+    {
+        gameObject.SetActive(false);
+    }
+
+    #region invoke
+    void AnimCallStart()
     {
         this.Invoke("AnimCallBack", _progressTime);
         this.Invoke("AnimCallBack2", _endTime);
     }
 
-    public void AnimCallBack()
+    void AnimCallBack()
     {
         _animProgressCallBack?.Invoke();
     }
     
-    public void AnimCallBack2()
+    void AnimCallBack2()
     {
         _animEndCallBack?.Invoke();
     }
-
-    //public void AnimEpiphany()
-    //{
-    //    animator.speed = 0;
-    //    Invoke("ResetSpeed", _keepEpiphanyTime);
-    //}
-
-    //public void ResetSpeed()
-    //{
-    //    animator.speed = 1;
-    //}
-
-
+    #endregion
 
 
 }

@@ -15,10 +15,25 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: c7e71fccf2508564fbbc4c07c3ce6525
+  m_GUID: 3767fd831523c6a4b919b4a59594673b
   m_SerializeEntries:
-  - m_GUID: a67ff24d0321a334ab1ac74e5d3948f2
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_prop
+  - m_GUID: e2f277595bba3324a9e775ded1af260f
+    m_Address: Assets/Game/AssetDynamic/AI/150000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 452cba7668bc6e14295e572ba4cfc831
+    m_Address: Assets/Game/AssetDynamic/AI/150001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02bd390cd1aa77640bde4c5f9fd21863
+    m_Address: Assets/Game/AssetDynamic/AI/150002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 330f71033eaa2e740b7d03c31684c82f
+    m_Address: Assets/Game/AssetDynamic/AI/150003
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -27,13 +42,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ccca06213afc1f746b7a155828087b38
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_equip
+  - m_GUID: d605c76fa3d85644c87175d84f9f1762
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 69460ad2eea76014aa6ad0c76c4d8d7e
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_material
+  - m_GUID: ccca06213afc1f746b7a155828087b38
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_equip
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -42,8 +57,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d605c76fa3d85644c87175d84f9f1762
-    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
+  - m_GUID: 69460ad2eea76014aa6ad0c76c4d8d7e
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_material
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a67ff24d0321a334ab1ac74e5d3948f2
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_prop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18e028864a15efa4291188acf18b7196
+    m_Address: Assets/Game/AssetDynamic/Prefab/Game/Character/Orc
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50396e080a4fd624f9fed6377dd5470b
+    m_Address: Assets/Game/AssetDynamic/Prefab/Game/Character/Skeleton
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -64,6 +94,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d1c3109bdb54ad54c8a2b2838528e640
     m_Address: Assets/Game/AssetDynamic/Scene/GameScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a479231353377349a5210db4aa7a5c7
+    m_Address: Assets/Game/AssetDynamic/Scene/GameScene/LightingData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38f1a07766d96a44d854fdbca5227ffb
+    m_Address: Assets/Game/AssetDynamic/Scene/GameScene/ReflectionProbe-0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -144,16 +184,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31f7129b4d9a1224bbbde7353f69bc43
     m_Address: Assets/Game/AssetDynamic/Sprite/UI/icon/tab5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e2f277595bba3324a9e775ded1af260f
-    m_Address: Assets/Game/AssetDynamic/AI/150000
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 452cba7668bc6e14295e572ba4cfc831
-    m_Address: Assets/Game/AssetDynamic/AI/150001
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

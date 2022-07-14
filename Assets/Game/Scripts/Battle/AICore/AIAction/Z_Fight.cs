@@ -36,7 +36,11 @@ public class Z_Fight : BaseAction
     public override TaskStatus OnUpdate()
     {
         RecordTime();
-        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.GetAttackRange(),true);
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.GetAttackRange(), zBoxTriggers, true);
+        if (!_testAI.isAI)
+        {
+            Debug.Log(zBoxTriggers.Count);
+        }
         if (zBoxTriggers.Count > 0)
         {
             return TaskStatus.Running;
@@ -51,35 +55,33 @@ public class Z_Fight : BaseAction
     {
         if (!isCD && _time >= _testAI.heroAttr.GetAttackInterval())
         {
-            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack,0.5f, FightCallBack, true);
-            isCD = true;
+            Attack();
         }
     }
 
     private void ProgressBack()
     {
-        if (_testAI.isAI)
+        if (!_testAI.isAI)
         {
-            Debug.Log("xxxxxxxxxxxxxx");
+            if (_hitData!=null)
+            {
+                if (zBoxTriggers != null && zBoxTriggers.Count > 0)
+                {
+                    foreach (var item in zBoxTriggers)
+                    {
+                        item.testAI.BeHurt(_hitData);
+                    }
+                }
+            }
         }
     }
     private void FightCallBack()
     {
-        _time = 0;
+        _time = 0f;
         isCD = false;
         if (!isCD && _time >= _testAI.heroAttr.GetAttackInterval())
         {
-            _hitData = new HitData(1);
-            if (_testAI.heroAttr.GetCriticalHitAnim()&&Random.Range(0,10)<5)
-            {
-                _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack, 0.5f, FightCallBack, true);
-            }
-            else
-            {
-                _hitData.isCriticalHit = true;
-                _testAI.Play(Const_BattleAnim_Name.anim_attack2, _testAI.heroAttr.GetAttackSpeed(), ProgressBack, 0.5f, FightCallBack, true);
-            }
-            isCD = true;
+            Attack();
         }
         else
         {
@@ -87,4 +89,26 @@ public class Z_Fight : BaseAction
         }
     }
 
+    private void Attack()
+    {
+        var weight = Random.Range(1, 101);
+        if(weight <= _testAI.heroAttr.GetCriticalHitProbability())
+        {
+            _hitData = new HitData(-10);
+            _hitData.isCriticalHit = true;
+        }
+        else
+        {
+            _hitData = new HitData(-5);
+        }
+        if (_testAI.heroAttr.GetCriticalHitAnim()&&_hitData.isCriticalHit)
+        {
+            _testAI.Play(Const_BattleAnim_Name.anim_attack2, _testAI.heroAttr.GetAttackSpeed(), ProgressBack,_testAI.heroAttr.GetAttackProgressBack(), FightCallBack, true);
+        }
+        else
+        {
+            _testAI.Play(Const_BattleAnim_Name.anim_attack1, _testAI.heroAttr.GetAttackSpeed(), ProgressBack,_testAI.heroAttr.GetAttackProgressBack(), FightCallBack, true);
+        }
+        isCD = true;
+    }
 }

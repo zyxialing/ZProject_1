@@ -22,6 +22,17 @@ namespace Table {
         }
 
         /// <summary>
+        /// 描述，无实际作用
+        /// </summary>
+        [XmlIgnore]
+        public string des;
+        [XmlAttribute("des")]
+        public string _des {
+            get { return des.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) des = ""; else des = value; }
+        }
+
+        /// <summary>
         /// 名字
         /// </summary>
         [XmlIgnore]
@@ -74,6 +85,17 @@ namespace Table {
         public string _criticalHitAnim {
             get { return criticalHitAnim.ToString(); }
             set { if (string.IsNullOrEmpty(value)) criticalHitAnim = false; else criticalHitAnim = bool.Parse(value); }
+        }
+
+        /// <summary>
+        /// 攻击伤害触发点
+        /// </summary>
+        [XmlIgnore]
+        public float attackProgressBack;
+        [XmlAttribute("attackProgressBack")]
+        public string _attackProgressBack {
+            get { return attackProgressBack.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) attackProgressBack = 0; else attackProgressBack = float.Parse(value); }
         }
 
         /// <summary>

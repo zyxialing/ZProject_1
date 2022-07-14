@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Table;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static ResHanderManager;
 
@@ -93,10 +94,9 @@ public partial class LoadingPanel : BasePanel
     {
         UIManager.Instance.OpenPanel<TopBanner>();
         UIManager.Instance.OpenPanel<MainPanel>();
-        ResLoader.Instance.GetScene("GameScene", (hander)=> {
+        ResLoader.Instance.GetScene("GameScene", (hander) => {
             Close();
         });
-
     }
 
     public void Update()

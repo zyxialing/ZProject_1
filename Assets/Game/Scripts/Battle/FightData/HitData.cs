@@ -10,5 +10,6 @@ public class HitData
     public HitData(int hurt)
     {
         this.hurt = hurt;
+        this.isCriticalHit = false;
     }
 }
