@@ -6,89 +6,42 @@ using UnityEngine;
 
 public class LoopEva : EvaMono
 {
-    public static LoopEva loopEva;
-    public List<Transform> mapTransforms;
-    [Range(0, 1)]
-    public float mapSpeed = 0.1f;
-    [Header("后期调整好值后可以去除该参数")]
-    public float limitMapSpeed = 1;
-    private int curHeadIndex;
-    private int curTialIndex;
-    private int mapCount;
-    Transform headTF;
-    Transform tialTF;
-    private void Awake()
+    public Transform triggerTransform;
+    public float singleSize = 300;
+    [HideInInspector]
+    public List<GameObject> mapPrefabs;
+    public int curId = 0;
+    private int maxCount;
+    private void Start()
     {
-        loopEva = this;
-    }
-    void Start()
-    {
-        if (InitPosition())
+        mapPrefabs = new List<GameObject>();
+        Transform poolTrans = transform.parent.Find("Pools").transform;
+        for (int i = 0; i < poolTrans.childCount; i++)
         {
-           
+            mapPrefabs.Add(poolTrans.GetChild(i).gameObject);
+            mapPrefabs[i].SetActive(false);
         }
-    }
-
-    private bool InitPosition()
-    {
-        if (mapTransforms.Count < 2)
+        maxCount = mapPrefabs.Count;
+        if (maxCount < 2)
         {
-            Debug.LogError("数量不能小于2");
-            return false;
+            Debug.LogError("地图不能小于2");
         }
-        else
-        {
-            mapCount = mapTransforms.Count;
-            curHeadIndex = 0;
-            curTialIndex = 1;
-            headTF = mapTransforms[curHeadIndex];
-            tialTF = mapTransforms[curTialIndex];
-            headTF.position = Vector3.zero;
-            tialTF.position = Vector3.right * 300;
-            tialTF.SetParent(headTF);
-            return true;
-        }
+        GameObject obj = mapPrefabs[curId % maxCount];
+        obj.transform.SetParent(transform);
+        obj.transform.position = Vector3.forward * 300 * curId;
+        obj.SetActive(true);
     }
 
-    public void StartMove()
+    public void Update()
     {
-
-        headTF.DOLocalMoveX(-300, 20).SetEase(Ease.Linear).OnComplete(OnComplete);
-    }
-
-    private void FixedUpdate()
-    {
-        headTF.Translate(Vector3.left* limitMapSpeed * mapSpeed);
-    }
-
-    private void Update()
-    {
-        if (headTF.position.x <= -300f)
+        var nextID = Mathf.CeilToInt(triggerTransform.position.z / 300);
+        if (nextID != curId)
         {
-            OnComplete();
+            curId = nextID;
+            GameObject obj = mapPrefabs[curId % maxCount];
+            obj.transform.SetParent(transform);
+            obj.transform.position = Vector3.forward * 300 * curId;
+            obj.SetActive(true);
         }
-    }
-
-    private void OnComplete()
-    {
-        curHeadIndex++;
-        curTialIndex++;
-        if (curHeadIndex >= mapCount)
-        {
-            curHeadIndex = 0;
-        }
-        if (curTialIndex >= mapCount)
-        {
-            curTialIndex = 0;
-        }
-
-        tialTF.SetParent(transform);
-        headTF = mapTransforms[curHeadIndex];
-        tialTF = mapTransforms[curTialIndex];
-        headTF.position = Vector3.zero;
-        tialTF.position = Vector3.right * 300;
-        tialTF.SetParent(headTF);
-        
-
     }
 }

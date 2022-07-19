@@ -9,6 +9,7 @@ public class Z_Run : BaseAction
     private Animator _animator;
     private ZBoxTrigger _boxTrigger;
     private TestAI _testAI;
+    private MoveMono moveMono;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
@@ -19,7 +20,9 @@ public class Z_Run : BaseAction
     {
         if (!_testAI.isAI)
         {
-            LoopEva.loopEva.mapSpeed = 1F;
+            moveMono = transform.parent.GetComponent<MoveMono>();
+            moveMono.speed = 0.5f;
+            //LoopEva.loopEva.mapSpeed = 1F;
         }
         _testAI.Play(Const_BattleAnim_Name.anim_run);
     }

@@ -9,6 +9,7 @@ public class Z_Birth : BaseAction
     private TaskStatus taskStatus;
     private Animator _animator;
     private TestAI _testAI;
+    private MoveMono moveMono;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
@@ -18,7 +19,9 @@ public class Z_Birth : BaseAction
     {
         if (!_testAI.isAI)
         {
-            LoopEva.loopEva.mapSpeed = 0f;
+            moveMono = transform.parent.GetComponent<MoveMono>();
+            moveMono.speed = 0f;
+            //LoopEva.loopEva.mapSpeed = 1F;
         }
         _testAI.Play(Const_BattleAnim_Name.anim_birth);
         if (_testAI.heroAttr.isEnterGame)

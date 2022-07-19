@@ -15,6 +15,7 @@ public class Z_Fight : BaseAction
     private TestAI _testAI;
     private HitData _hitData;
     private bool isCD = true;
+    private MoveMono moveMono;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
@@ -25,7 +26,9 @@ public class Z_Fight : BaseAction
     {
         if (!_testAI.isAI)
         {
-            LoopEva.loopEva.mapSpeed = 0f;
+            moveMono = transform.parent.GetComponent<MoveMono>();
+            moveMono.speed = 0f;
+            //LoopEva.loopEva.mapSpeed = 1F;
         }
         isCD = false;
         _time = 9999f;
@@ -37,10 +40,10 @@ public class Z_Fight : BaseAction
     {
         RecordTime();
         zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.GetAttackRange(), zBoxTriggers, true);
-        if (!_testAI.isAI)
-        {
-            Debug.Log(zBoxTriggers.Count);
-        }
+        //if (!_testAI.isAI)
+        //{
+        //    Debug.Log(zBoxTriggers.Count);
+        //}
         if (zBoxTriggers.Count > 0)
         {
             return TaskStatus.Running;

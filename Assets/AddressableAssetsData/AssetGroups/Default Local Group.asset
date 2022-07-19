@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 3767fd831523c6a4b919b4a59594673b
+  m_GUID: 89c5fe5e4fc74d244889b4c9f2361c44
   m_SerializeEntries:
   - m_GUID: e2f277595bba3324a9e775ded1af260f
     m_Address: Assets/Game/AssetDynamic/AI/150000

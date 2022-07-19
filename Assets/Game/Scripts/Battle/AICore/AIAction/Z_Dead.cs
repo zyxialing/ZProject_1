@@ -9,6 +9,7 @@ public class Z_Dead : Action
     private TaskStatus taskStatus;
     private TestAI _testAI;
     private ZBoxTrigger _boxTrigger;
+    private MoveMono moveMono;
     public override void OnAwake()
     {
         _boxTrigger = GetComponent<ZBoxTrigger>();
@@ -18,7 +19,9 @@ public class Z_Dead : Action
     {
         if (!_testAI.isAI)
         {
-            LoopEva.loopEva.mapSpeed = 0f;
+            moveMono = transform.parent.GetComponent<MoveMono>();
+            moveMono.speed = 0f;
+            //LoopEva.loopEva.mapSpeed = 1F;
         }
         taskStatus = TaskStatus.Running;
         Debug.Log("死亡");
