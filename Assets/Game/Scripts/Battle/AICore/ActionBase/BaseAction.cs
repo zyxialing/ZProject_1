@@ -19,5 +19,10 @@ public class BaseAction : Action
 
     }
 
+    public virtual void ResetTime()
+    {
+        _time = 0;
+    }
+
 
 }

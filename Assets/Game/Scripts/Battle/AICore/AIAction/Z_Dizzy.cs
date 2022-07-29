@@ -16,6 +16,7 @@ public class Z_Dizzy : BaseAction
     }
     public override void OnStart()
     {
+        ResetTime();
         _testAI.Play(Const_BattleAnim_Name.anim_dizzy);
     }
 
@@ -35,6 +36,13 @@ public class Z_Dizzy : BaseAction
         {
             taskStatus = TaskStatus.Running;
         }
+    }
+
+    public override void ResetTime()
+    {
+        base.ResetTime();
+        _testAI.CancelInvoke();
+        _testAI.unitMono.PlayStateText("StateText/dizzy", 3f);
     }
 
 }

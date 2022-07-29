@@ -141,7 +141,7 @@ Animator:
   m_GameObject: {fileID: 1945733066478266919}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 73d2f4319473c3948940539f22e8ae4e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8aed64aaae9777d499bc1ecf2cda5af2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15bc13b9f8612e040b6bf39f9d7d6074, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b329a21805419b84d89b703da737b8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 150002
+  id: 150001
   isAI: 0
   animator: {fileID: 0}
 --- !u!114 &1946471398863515846
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0.8, z: 0}
   size: {x: 1, y: 1.62, z: 1}
+  testAI: {fileID: 0}
   triggerType: 0
   triggerCamp: 0
 --- !u!1 &1945807567247067335

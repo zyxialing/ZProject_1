@@ -15,25 +15,25 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 89c5fe5e4fc74d244889b4c9f2361c44
+  m_GUID: 3b890e9c7b73ea44b9b1a14e4f51e65b
   m_SerializeEntries:
-  - m_GUID: e2f277595bba3324a9e775ded1af260f
-    m_Address: Assets/Game/AssetDynamic/AI/150000
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 452cba7668bc6e14295e572ba4cfc831
-    m_Address: Assets/Game/AssetDynamic/AI/150001
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 02bd390cd1aa77640bde4c5f9fd21863
-    m_Address: Assets/Game/AssetDynamic/AI/150002
+    m_Address: Assets/Game/AssetDynamic/AI/Enemy/150000
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 330f71033eaa2e740b7d03c31684c82f
-    m_Address: Assets/Game/AssetDynamic/AI/150003
+    m_Address: Assets/Game/AssetDynamic/AI/Enemy/150001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2f277595bba3324a9e775ded1af260f
+    m_Address: Assets/Game/AssetDynamic/AI/Hero/150000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32c58c03ee89abb4cb94a63dba946d3d
+    m_Address: Assets/Game/AssetDynamic/AI/Hero/150001
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -74,6 +74,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 50396e080a4fd624f9fed6377dd5470b
     m_Address: Assets/Game/AssetDynamic/Prefab/Game/Character/Skeleton
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7431d234ddcccc6419e53de5d84763d7
+    m_Address: Assets/Game/AssetDynamic/Prefab/Game/StateText/dizzy
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

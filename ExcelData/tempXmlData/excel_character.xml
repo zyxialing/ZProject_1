@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <allexcel_character>
 <excel_characters>
-	<excel_character id="150000" des="Skeleton" name="10000" hp="10000" attackRange="3" attackFrequency="4" criticalHitAnim="True" attackProgressBack="0.5" path="Assets/Game/AssetDynamic/AI/150000">
+	<excel_character id="150000" des="Skeleton" name="10000" hp="100" attackRange="3.5" attackFrequency="1" criticalHitAnim="True" attackProgressBack="0.5" heroPath="Assets/Game/AssetDynamic/AI/Hero/150000" enemyPath="Assets/Game/AssetDynamic/AI/Enemy/150000">
 	</excel_character>
-	<excel_character id="150001" des="Skeleton AI" name="10001" hp="100" attackRange="3" attackFrequency="1" criticalHitAnim="True" attackProgressBack="0.5" path="Assets/Game/AssetDynamic/AI/150001">
-	</excel_character>
-	<excel_character id="150002" des="Orc" name="10002" hp="10000" attackRange="3" attackFrequency="4" criticalHitAnim="" attackProgressBack="0.5" path="Assets/Game/AssetDynamic/AI/150002">
-	</excel_character>
-	<excel_character id="150003" des="Orc AI" name="10003" hp="100" attackRange="3" attackFrequency="1" criticalHitAnim="" attackProgressBack="0.5" path="Assets/Game/AssetDynamic/AI/150003">
-	</excel_character>
-	<excel_character id="150004" des="Orc" name="10004" hp="100" attackRange="3" attackFrequency="1" criticalHitAnim="" attackProgressBack="0.5" path="Assets/Game/AssetDynamic/AI/150004">
-	</excel_character>
-	<excel_character id="150005" des="Orc" name="10005" hp="100" attackRange="3" attackFrequency="1" criticalHitAnim="" attackProgressBack="0.5" path="Assets/Game/AssetDynamic/AI/150005">
+	<excel_character id="150001" des="Orc" name="10001" hp="100" attackRange="3.5" attackFrequency="1" criticalHitAnim="" attackProgressBack="0.5" heroPath="Assets/Game/AssetDynamic/AI/Hero/150001" enemyPath="Assets/Game/AssetDynamic/AI/Enemy/150001">
 	</excel_character>
 </excel_characters>
 </allexcel_character>

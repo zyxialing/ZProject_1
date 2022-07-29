@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b329a21805419b84d89b703da737b8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 150001
+  id: 150000
   isAI: 0
   animator: {fileID: 0}
 --- !u!114 &5057940312205514144
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0.8, z: 0}
   size: {x: 1, y: 1.62, z: 1}
+  testAI: {fileID: 0}
   triggerType: 0
   triggerCamp: 0
 --- !u!1 &5058283191049311016

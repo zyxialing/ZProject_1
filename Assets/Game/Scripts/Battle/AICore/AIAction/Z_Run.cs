@@ -9,7 +9,6 @@ public class Z_Run : BaseAction
     private Animator _animator;
     private ZBoxTrigger _boxTrigger;
     private TestAI _testAI;
-    private MoveMono moveMono;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
@@ -18,10 +17,15 @@ public class Z_Run : BaseAction
     }
     public override void OnStart()
     {
+        zBoxTriggers = ZTriggerManager.Instance.GetTriggersByDistance(_boxTrigger, _testAI.heroAttr.GetAttackRange(), zBoxTriggers, true);
+        if (zBoxTriggers.Count > 0)
+        {
+            Owner.SendEvent(Const_BattleEvent.event_fight_fight);
+            return;
+        }
         if (!_testAI.isAI)
         {
-            moveMono = transform.parent.GetComponent<MoveMono>();
-            moveMono.speed = 0.5f;
+            _testAI.unitMono.speed = 0.5f;
             //LoopEva.loopEva.mapSpeed = 1F;
         }
         _testAI.Play(Const_BattleAnim_Name.anim_run);

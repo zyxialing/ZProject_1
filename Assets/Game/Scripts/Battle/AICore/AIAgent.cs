@@ -23,5 +23,16 @@ public class AIAgent : IUnit
     public void SendEvent(string eventName)
     {
         _behaviorTree.SendEvent(eventName);
+        switch (eventName)
+        {
+            case Const_BattleEvent.event_fight_dizzy:
+                ResetTime<Z_Dizzy>();
+                break;
+        }
+    }
+
+    public void ResetTime<T>() where T : BaseAction
+    {
+        _behaviorTree.FindTask<T>().ResetTime();
     }
 }

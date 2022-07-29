@@ -15,7 +15,6 @@ public class Z_Fight : BaseAction
     private TestAI _testAI;
     private HitData _hitData;
     private bool isCD = true;
-    private MoveMono moveMono;
     public override void OnAwake()
     {
         _animator = GetComponent<Animator>();
@@ -26,8 +25,7 @@ public class Z_Fight : BaseAction
     {
         if (!_testAI.isAI)
         {
-            moveMono = transform.parent.GetComponent<MoveMono>();
-            moveMono.speed = 0f;
+            _testAI.unitMono.speed = 0f;
             //LoopEva.loopEva.mapSpeed = 1F;
         }
         isCD = false;
@@ -64,18 +62,19 @@ public class Z_Fight : BaseAction
 
     private void ProgressBack()
     {
-        if (!_testAI.isAI)
+        if (_hitData != null)
         {
-            if (_hitData!=null)
+            if (zBoxTriggers != null && zBoxTriggers.Count > 0)
             {
-                if (zBoxTriggers != null && zBoxTriggers.Count > 0)
+                foreach (var item in zBoxTriggers)
                 {
-                    foreach (var item in zBoxTriggers)
-                    {
-                        item.testAI.BeHurt(_hitData);
-                    }
+                    item.testAI.BeHurt(_hitData);
                 }
             }
+        }
+        if (!_testAI.isAI)
+        {
+           
         }
     }
     private void FightCallBack()
@@ -97,8 +96,9 @@ public class Z_Fight : BaseAction
         var weight = Random.Range(1, 101);
         if(weight <= _testAI.heroAttr.GetCriticalHitProbability())
         {
-            _hitData = new HitData(-10);
+            _hitData = new HitData(-1);
             _hitData.isCriticalHit = true;
+            _hitData.isDizzy = true;
         }
         else
         {

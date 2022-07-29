@@ -99,14 +99,25 @@ namespace Table {
         }
 
         /// <summary>
-        /// 路径
+        /// 己方ai路径
         /// </summary>
         [XmlIgnore]
-        public string path;
-        [XmlAttribute("path")]
-        public string _path {
-            get { return path.ToString(); }
-            set { if (string.IsNullOrEmpty(value)) path = ""; else path = value; }
+        public string heroPath;
+        [XmlAttribute("heroPath")]
+        public string _heroPath {
+            get { return heroPath.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) heroPath = ""; else heroPath = value; }
+        }
+
+        /// <summary>
+        /// 敌方ai路径
+        /// </summary>
+        [XmlIgnore]
+        public string enemyPath;
+        [XmlAttribute("enemyPath")]
+        public string _enemyPath {
+            get { return enemyPath.ToString(); }
+            set { if (string.IsNullOrEmpty(value)) enemyPath = ""; else enemyPath = value; }
         }
 
         public List<T> LoadBytes<T>()

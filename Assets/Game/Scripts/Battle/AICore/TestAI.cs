@@ -15,6 +15,8 @@ public class TestAI : MonoBehaviour
     public HeroAttr heroAttr;
     public AnimData animData;
     public AIAgent aIAgent;
+    [HideInInspector]
+    public UnitMono unitMono;
 
     private Action _animProgressCallBack;
     private Action _animEndCallBack;
@@ -24,6 +26,7 @@ public class TestAI : MonoBehaviour
 
     private void Awake()
     {
+        unitMono = transform.parent.GetComponent<UnitMono>();
         animator = GetComponent<Animator>();
         animData = new AnimData(animator,this);
     }
@@ -32,7 +35,7 @@ public class TestAI : MonoBehaviour
     {
         excel_character character = ExcelConfig.Get_excel_character(id);
         heroAttr = new HeroAttr(character);
-        var ai = AIUtils.GetExternalBehavior(character.path);
+        var ai = AIUtils.GetExternalBehavior(isAI?character.enemyPath : character.heroPath);
         aIAgent = new AIAgent(gameObject, ai);
     }
     /// <summary>
@@ -103,14 +106,19 @@ public class TestAI : MonoBehaviour
     public void BeHurt(HitData hitData)
     {
 
-       bool isDead = heroAttr.SetHp(hitData.hurt);
+        bool isDead = heroAttr.SetHp(hitData.hurt);
+        if (!isAI)
+        {
+            Debug.Log(heroAttr.hp);
+        }
         if (isDead)
         {
             aIAgent.SendEvent(Const_BattleEvent.event_fight_dead);
+            return;
         }
-        if (isAI)
+        if (hitData.isDizzy)
         {
-            Debug.Log(heroAttr.hp);
+            aIAgent.SendEvent(Const_BattleEvent.event_fight_dizzy);
         }
     }
 
