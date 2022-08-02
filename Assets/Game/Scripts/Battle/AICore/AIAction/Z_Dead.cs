@@ -23,7 +23,6 @@ public class Z_Dead : BaseAction
             //LoopEva.loopEva.mapSpeed = 1F;
         }
         taskStatus = TaskStatus.Running;
-        Debug.Log("死亡");
         _boxTrigger.enabled = false;
         _readyClear = false;
         _testAI.Play(Const_BattleAnim_Name.anim_dead,1f,null,1f,endCallBack);
@@ -50,6 +49,15 @@ public class Z_Dead : BaseAction
     {
         _time = 0;
         _readyClear = true;
+        if (!_testAI.isAI)
+        {
+            ZLogUtil.LogError("游戏失败，游戏结束！");
+            EventManager.Instance.Dispatch(Event_Battle_Dead.AutoCreate());
+        }
+        else
+        {
+            Statistics.Instance.SetBattleStage();
+        }
     }
 
 }

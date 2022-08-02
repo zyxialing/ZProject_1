@@ -93,7 +93,7 @@ public partial class LoadingPanel : BasePanel
     private void EnterGame()
     {
         UIManager.Instance.OpenPanel<TopBanner>();
-        UIManager.Instance.OpenPanel<MainPanel>();
+        UIManager.Instance.OpenPanel<GamePanel>();
         ResLoader.Instance.GetScene("GameScene", (hander) => {
             Close();
         });

@@ -109,7 +109,7 @@ public class TestAI : MonoBehaviour
         bool isDead = heroAttr.SetHp(hitData.hurt);
         if (!isAI)
         {
-            Debug.Log(heroAttr.hp);
+            ZLogUtil.Log("¼º·½ÑªÁ¿£º"+heroAttr.hp);
         }
         if (isDead)
         {
