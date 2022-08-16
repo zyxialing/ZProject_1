@@ -8,6 +8,7 @@ public partial class MainPanel : BasePanel
 
    public override void AutoInit()
    {
+        ServiceBinder.Instance.RegisterObj(this);
     this.equip_Center = panel.transform.Find("Background/Equip_Center").GetComponent<UnityEngine.RectTransform>();
     this.mP_EquipScroll = panel.transform.Find("Background/MP_EquipScroll").GetComponent<MP_EquipScroll>();
     this.mP_PropScroll = panel.transform.Find("Background/MP_PropScroll").GetComponent<MP_PropScroll>();

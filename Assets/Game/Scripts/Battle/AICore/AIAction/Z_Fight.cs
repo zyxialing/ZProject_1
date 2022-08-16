@@ -42,7 +42,7 @@ public class Z_Fight : BaseAction
         //{
         //    Debug.Log(zBoxTriggers.Count);
         //}
-        if (zBoxTriggers.Count > 0)
+        if (zBoxTriggers.Count > 0 || isCD)
         {
             return TaskStatus.Running;
         }

@@ -6,12 +6,18 @@ public class ExcelData
 {
     public Dictionary<int, excel_affix> excel_affixMap = new Dictionary<int, excel_affix>();
     public List<excel_affix> excel_affixList = new List<excel_affix>();
+    public Dictionary<int, excel_birthtype> excel_birthtypeMap = new Dictionary<int, excel_birthtype>();
+    public List<excel_birthtype> excel_birthtypeList = new List<excel_birthtype>();
     public Dictionary<int, excel_character> excel_characterMap = new Dictionary<int, excel_character>();
     public List<excel_character> excel_characterList = new List<excel_character>();
+    public Dictionary<int, excel_characterattr> excel_characterattrMap = new Dictionary<int, excel_characterattr>();
+    public List<excel_characterattr> excel_characterattrList = new List<excel_characterattr>();
     public Dictionary<int, excel_equip> excel_equipMap = new Dictionary<int, excel_equip>();
     public List<excel_equip> excel_equipList = new List<excel_equip>();
     public Dictionary<int, excel_language> excel_languageMap = new Dictionary<int, excel_language>();
     public List<excel_language> excel_languageList = new List<excel_language>();
+    public Dictionary<int, excel_level> excel_levelMap = new Dictionary<int, excel_level>();
+    public List<excel_level> excel_levelList = new List<excel_level>();
     public Dictionary<int, excel_material> excel_materialMap = new Dictionary<int, excel_material>();
     public List<excel_material> excel_materialList = new List<excel_material>();
     public Dictionary<int, excel_prop> excel_propMap = new Dictionary<int, excel_prop>();
@@ -28,11 +34,25 @@ public class ExcelData
                     excel_affixMap.Add(excel_affixList[i].id, excel_affixList[i]);
                 }
                 break;
+            case "excel_birthtype":
+                excel_birthtypeList = list as List<excel_birthtype>;
+                for (int i = 0; i < excel_birthtypeList.Count; i++)
+                {
+                    excel_birthtypeMap.Add(excel_birthtypeList[i].id, excel_birthtypeList[i]);
+                }
+                break;
             case "excel_character":
                 excel_characterList = list as List<excel_character>;
                 for (int i = 0; i < excel_characterList.Count; i++)
                 {
                     excel_characterMap.Add(excel_characterList[i].id, excel_characterList[i]);
+                }
+                break;
+            case "excel_characterattr":
+                excel_characterattrList = list as List<excel_characterattr>;
+                for (int i = 0; i < excel_characterattrList.Count; i++)
+                {
+                    excel_characterattrMap.Add(excel_characterattrList[i].id, excel_characterattrList[i]);
                 }
                 break;
             case "excel_equip":
@@ -47,6 +67,13 @@ public class ExcelData
                 for (int i = 0; i < excel_languageList.Count; i++)
                 {
                     excel_languageMap.Add(excel_languageList[i].id, excel_languageList[i]);
+                }
+                break;
+            case "excel_level":
+                excel_levelList = list as List<excel_level>;
+                for (int i = 0; i < excel_levelList.Count; i++)
+                {
+                    excel_levelMap.Add(excel_levelList[i].id, excel_levelList[i]);
                 }
                 break;
             case "excel_material":

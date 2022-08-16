@@ -39,6 +39,7 @@ public partial class LoadingPanel : BasePanel
 
     private IEnumerator LoadRes()
     {
+        ZLogUtil.LogError("加载开始");
         slider_LoadingBar.value = 0;
         AdressablePath adressablePath = Resources.Load<AdressablePath>(typeof(AdressablePath).ToString());
         bool loadCompleted = false;
@@ -50,6 +51,7 @@ public partial class LoadingPanel : BasePanel
         {
             yield return null;
         }
+        ZLogUtil.LogError("加载公用音效完成");
         UpdateProgress(0.1f);
         float progress = 0.2f;
         ExcelConfig.Instance.LoadAllExcel();//加载表
@@ -60,6 +62,7 @@ public partial class LoadingPanel : BasePanel
         //}
         Destroy(GameObject.Find("ExcelLoader"));
         yield return null;
+        ZLogUtil.LogError("加载表完成");
         UpdateProgress(progress);
         for (int i = 0; i < 4; i++)
         {
@@ -70,6 +73,7 @@ public partial class LoadingPanel : BasePanel
 
         UpdateProgress(1f);
         UIManager.Instance.Init();
+        ZLogUtil.LogError("UI初始化完成");
         //GameControler.Instance.Init();
         yield return null;
         while (true)
@@ -92,11 +96,9 @@ public partial class LoadingPanel : BasePanel
 
     private void EnterGame()
     {
-        UIManager.Instance.OpenPanel<TopBanner>();
-        UIManager.Instance.OpenPanel<GamePanel>();
-        ResLoader.Instance.GetScene("GameScene", (hander) => {
-            Close();
-        });
+        ZLogUtil.LogError("进入关卡选择界面");
+        JumpManager.JumpPanel<LevelPanel>();
+        Close();
     }
 
     public void Update()

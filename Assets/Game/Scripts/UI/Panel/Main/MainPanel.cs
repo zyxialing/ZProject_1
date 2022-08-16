@@ -19,6 +19,7 @@ public partial class MainPanel : BasePanel
     public override void OnShowing()
     {
         EventManager.Instance.AddObserver<EventChangeTab_MP>(EventChangeTab_MPCallBack);
+        EventManager.Instance.AddObserver<Event_Battle_Dead>(Event_Battle_DeadCallBack);
         selectIndex = -1;
         mp_Compose.gameObject.SetActive(true);
         mp_Role.gameObject.SetActive(true);
@@ -42,6 +43,12 @@ public partial class MainPanel : BasePanel
      
     }
 
+    private void OnDestroy()
+    {
+        EventManager.Instance.RemoveObserver<EventChangeTab_MP>(EventChangeTab_MPCallBack);
+        EventManager.Instance.RemoveObserver<Event_Battle_Dead>(Event_Battle_DeadCallBack);
+    }
+
     private void RefreshPanel()
     {
  
@@ -62,21 +69,21 @@ public partial class MainPanel : BasePanel
             switch (selectIndex)
             {
                 case 0:
-                    Debug.LogError("装备tab");
+                    ZLogUtil.Log("装备tab");
                     mP_EquipScroll.gameObject.SetActive(true);
                     mP_EquipScroll.scroller.ReloadData();
                     break;
                 case 1:
-                    Debug.LogError("道具tab");
+                    ZLogUtil.Log("道具tab");
                     mP_PropScroll.gameObject.SetActive(true);
                     mP_PropScroll.scroller.ReloadData();
                     break;
                 case 2:
-                    Debug.LogError("合成tab");
+                    ZLogUtil.Log("合成tab");
                     mp_Compose.gameObject.SetActive(true);
                     break;
                 case 3:
-                    Debug.LogError("角色tab");
+                    ZLogUtil.Log("角色tab");
                     mp_Role.gameObject.SetActive(true);
                     break;
             }
@@ -87,6 +94,11 @@ public partial class MainPanel : BasePanel
     private void EventChangeTab_MPCallBack(EventChangeTab_MP eventData)
     {
         SelectIndex(eventData.index);
+    }
+
+    private void Event_Battle_DeadCallBack(Event_Battle_Dead obj)
+    {
+        JumpManager.JumpPanel<FailPanel>();
     }
 
 }

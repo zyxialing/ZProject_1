@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allexcel_birthtype>
+<excel_birthtypes>
+	<excel_birthtype id="250000" des="（1对1模式）由阶段和出生的怪物来决定）" maxStage="3" stageMonster="150000-150001-150000">
+	</excel_birthtype>
+	<excel_birthtype id="250001" des="（1对1模式）由阶段和出生的怪物来决定）" maxStage="3" stageMonster="150000-150001-150000">
+	</excel_birthtype>
+	<excel_birthtype id="250002" des="（1对1模式）由阶段和出生的怪物来决定）" maxStage="3" stageMonster="150000-150001-150000">
+	</excel_birthtype>
+	<excel_birthtype id="250003" des="（1对1模式）由阶段和出生的怪物来决定）" maxStage="3" stageMonster="150000-150001-150000">
+	</excel_birthtype>
+	<excel_birthtype id="250004" des="（1对1模式）由阶段和出生的怪物来决定）" maxStage="3" stageMonster="150000-150001-150000">
+	</excel_birthtype>
+	<excel_birthtype id="250005" des="（1对1模式）由阶段和出生的怪物来决定）" maxStage="3" stageMonster="150000-150001-150000">
+	</excel_birthtype>
+</excel_birthtypes>
+</allexcel_birthtype>

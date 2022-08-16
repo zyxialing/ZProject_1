@@ -25,6 +25,11 @@ public partial class TopBanner : BasePanel
 
     public override void OnClosing()
     {
+        
+    }
+
+    private void OnDestroy()
+    {
         EventManager.Instance.RemoveObserver<EventShowBanner>(OnShowBanner);
     }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allexcel_characterattr>
+<excel_characterattrs>
+	<excel_characterattr id="150000" des="Skeleton" name="10000" hp="100" attackRange="3.5" attackFrequency="1" criticalHitAnim="True" attackProgressBack="0.5" heroPath="Assets/Game/AssetDynamic/AI/Hero/150000" enemyPath="Assets/Game/AssetDynamic/AI/Enemy/150000">
+	</excel_characterattr>
+	<excel_characterattr id="150001" des="Orc" name="10001" hp="100" attackRange="3.5" attackFrequency="1" criticalHitAnim="" attackProgressBack="0.5" heroPath="Assets/Game/AssetDynamic/AI/Hero/150001" enemyPath="Assets/Game/AssetDynamic/AI/Enemy/150001">
+	</excel_characterattr>
+</excel_characterattrs>
+</allexcel_characterattr>

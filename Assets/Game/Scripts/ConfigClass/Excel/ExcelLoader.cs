@@ -7,9 +7,12 @@ public class ExcelLoader : MonoBehaviour
     public void LoadExcel()
     {
         ExcelConfig.Instance.InitExcelData(Config<excel_affix>.InitConfig());
+        ExcelConfig.Instance.InitExcelData(Config<excel_birthtype>.InitConfig());
         ExcelConfig.Instance.InitExcelData(Config<excel_character>.InitConfig());
+        ExcelConfig.Instance.InitExcelData(Config<excel_characterattr>.InitConfig());
         ExcelConfig.Instance.InitExcelData(Config<excel_equip>.InitConfig());
         ExcelConfig.Instance.InitExcelData(Config<excel_language>.InitConfig());
+        ExcelConfig.Instance.InitExcelData(Config<excel_level>.InitConfig());
         ExcelConfig.Instance.InitExcelData(Config<excel_material>.InitConfig());
         ExcelConfig.Instance.InitExcelData(Config<excel_prop>.InitConfig());
     }

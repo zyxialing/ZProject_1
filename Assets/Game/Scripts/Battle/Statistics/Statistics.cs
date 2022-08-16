@@ -7,6 +7,7 @@ using UnityEngine;
 public class Statistics : Singleton<Statistics>
 {
     private int battle_Stage;    /// 游戏阶段
+    private int battle_LevelId;
 
     private Statistics()
     {
@@ -17,11 +18,20 @@ public class Statistics : Singleton<Statistics>
     {
         return battle_Stage;
     }
+    public int GetLevelId()
+    {
+        return battle_LevelId;
+    }
 
-    public void SetBattleStage(int num=1)
+    public void SetBattleStage(int num = 1)
     {
         battle_Stage += num;
         ZLogUtil.LogError("游戏阶段" + battle_Stage);
+    }
+    public void SetLevelId(int levelId)
+    {
+        battle_LevelId = levelId;
+        ZLogUtil.LogError("设定关卡:" + battle_LevelId);
     }
 
 
@@ -30,5 +40,6 @@ public class Statistics : Singleton<Statistics>
     public void Clear()
     {
         battle_Stage = 0;
+        battle_LevelId = 0;
     }
 }

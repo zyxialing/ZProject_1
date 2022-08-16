@@ -19,6 +19,7 @@ public class ServiceBinder : Singleton<ServiceBinder>
     private void Binder()
     {
         container.RegisterInstance<IPropMgr>(new PropMgr());
+        container.RegisterInstance<ILevelMgr>(new LevelMgr());
     }
 
 

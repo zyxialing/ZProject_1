@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: ee52de52c01b7144e8de49e3a2fb7265
+  m_GUID: cd7fc813b3231764d9ba1560a9e8ecdd
   m_SerializeEntries:
   - m_GUID: 452cba7668bc6e14295e572ba4cfc831
     m_Address: Assets/Game/AssetDynamic/AI/Enemy/150000
@@ -42,8 +42,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95a13f0356d781540ba009a7c3eeb79a
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_birthtype
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d605c76fa3d85644c87175d84f9f1762
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_character
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa11eb5db697b964b87c9854774981e5
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_characterattr
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -54,6 +64,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 89b761b35e977a64eb1acc6ed97dcca8
     m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_language
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 186a8f05fefc25f49b2f03641f1aee01
+    m_Address: Assets/Game/AssetDynamic/ConfigBytes/excel_level
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -93,7 +108,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bfc86bdf82571fd4386bb1cd3e1b4ed4
-    m_Address: Assets/Game/AssetDynamic/Prefab/UI/Panel/Main/GamePanel
+    m_Address: Assets/Game/AssetDynamic/Prefab/UI/Panel/Main/MainPanel
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -104,6 +119,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7086608d7f782c94daaea3c43377fc9a
     m_Address: Assets/Game/AssetDynamic/Prefab/UI/Pop/Fail/FailPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89e5bd356ca16624990ea266ee587e17
+    m_Address: Assets/Game/AssetDynamic/Scene/EmptyScene
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
