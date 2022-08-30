@@ -96,13 +96,13 @@ public class Z_Fight : BaseAction
         var weight = Random.Range(1, 101);
         if(weight <= _testAI.heroAttr.GetCriticalHitProbability())
         {
-            _hitData = new HitData(-50);
+            _hitData = new HitData(-2);
             _hitData.isCriticalHit = true;
-            _hitData.isDizzy = true;
+            _hitData.attackType = E_AttackType.Dizzy;
         }
         else
         {
-            _hitData = new HitData(-5);
+            _hitData = new HitData(-1);
         }
         if (_testAI.heroAttr.GetCriticalHitAnim()&&_hitData.isCriticalHit)
         {

@@ -3,3 +3,9 @@
     CampA,
     CampB
 }
+
+public enum E_AttackType
+{
+    Normal,
+    Dizzy
+}

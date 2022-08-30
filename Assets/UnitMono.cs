@@ -7,17 +7,15 @@ using UnityTimer;
 public class UnitMono : MonoBehaviour
 {
     public float speed = 0f;
-    public Transform textRt;
+    public Transform effectTransform;
 
-    private GameObject dizzyObj;
+    private Dictionary<string, EffectInstance> _effectMap = new Dictionary<string, EffectInstance>();
+
     void Start()
     {
         speed = 0f;
-        textRt = new GameObject("3dText").transform;
-        textRt.SetParent(transform);
-        textRt.localPosition = new Vector3(0, 2.43f, 0.23f);
-        textRt.localRotation = Quaternion.Euler(0, -90f,0f);
-        textRt.localScale = Vector3.one * 0.3f;
+        effectTransform = new GameObject("effectPos").transform;
+        TransformUtils.TransformLocalNormalize(effectTransform.gameObject, transform);
     }
 
     // Update is called once per frame
@@ -26,20 +24,68 @@ public class UnitMono : MonoBehaviour
         transform.Translate(Vector3.forward* speed, Space.World);
     }
 
-    private Timer _timer;
-    public void PlayStateText(string path,float time)
+    internal void ShowEffect(HitData hitData)
     {
-        if (_timer != null)
+        switch (hitData.attackType)
         {
-            _timer.Pause();
-            Timer.Cancel(_timer);
+            case E_AttackType.Normal:
+                break;
+            case E_AttackType.Dizzy:
+                ShowLoopEffect("StateText/dizzy", 3f);
+                break;
         }
-        if (dizzyObj == null)
+    }
+
+    private void ShowLoopEffect(string path,float time)
+    {
+        if (_effectMap.ContainsKey(path))
         {
-            dizzyObj = PrefabUtils.Instance(path);
+            EffectInstance ei = _effectMap[path];
+            ei.timer.Pause();
+            ei.timer.Cancel();
+            TransformUtils.TransformLocalNormalize(ei.effectObj, effectTransform);
+            ei.effectObj.SetActive(true);
+            ei.timer = this.AttachTimer(time, () => {
+                _effectMap.Remove(path);
+                ZGameObjectPool.Push(path, ei.effectObj);
+            });
         }
-        dizzyObj.SetActive(true);
-        TransformUtils.TransformLocalNormalize(dizzyObj, textRt);
-        _timer = this.AttachTimer(time, () => { dizzyObj.SetActive(false);});
+        else
+        {
+            GameObject effectObj = ZGameObjectPool.Pop(path, () => {
+                return PrefabUtils.Instance(path);
+            }); 
+             TransformUtils.TransformLocalNormalize(effectObj, effectTransform);
+             effectObj.SetActive(true);
+             Timer _timer = this.AttachTimer(time, () => {
+                 ZGameObjectPool.Push(path, effectObj);
+             });
+             _effectMap.Add(path, new EffectInstance(_timer, effectObj));
+        }
+    }
+
+
+    private void ShowEffect(string path,float destroyTime)
+    {
+        GameObject effectObj = ZGameObjectPool.Pop(path, () => {
+            return PrefabUtils.Instance(path);
+        });
+        TransformUtils.TransformLocalNormalize(effectObj, effectTransform);
+        effectObj.SetActive(true);
+        Timer _timer = this.AttachTimer(destroyTime, () => {
+            ZGameObjectPool.Push(path, effectObj);
+        });
+    }
+}
+
+public class EffectInstance
+{
+    public Timer timer;
+    public GameObject effectObj;
+
+    public EffectInstance(Timer timer,GameObject effectObj)
+    {
+        this.timer = timer;
+        this.effectObj = effectObj;
     }
 }

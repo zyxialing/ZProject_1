@@ -45,11 +45,7 @@ public partial class LevelPanel : BasePanel
     private void EventEnterLevelCallBack(EventEnterLevel obj)
     {
         Statistics.Instance.SetLevelId(obj.levelId);
-        ResLoader.Instance.GetScene("GameScene", (hander) =>
-        {
-            Close();
-            JumpManager.JumpPanel<MainPanel>();
-        });
+        GameControler.Instance.GoGameScene(() => { Close(); });
     }
 
 }

@@ -15,11 +15,7 @@ public partial class FailPanel : BasePanel
     public override void OnShowing()
     {
         AddClick(backBtn, () => {
-            ResLoader.Instance.GetScene("EmptyScene", (hander) =>
-            {
-                JumpManager.GomeHome(()=> { JumpManager.JumpPanel<LevelPanel>(); });
-
-            });
+            GameControler.Instance.GoLevelScene();
         });
     }
 

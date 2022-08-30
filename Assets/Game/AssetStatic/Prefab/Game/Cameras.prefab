@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1146253664457610918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3535602796553415913}
+  m_Layer: 0
+  m_Name: SceneCamera
+  m_TagString: SceneCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3535602796553415913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146253664457610918}
+  m_LocalRotation: {x: 0.13007322, y: -0.6950403, z: 0.13007322, w: 0.6950403}
+  m_LocalPosition: {x: 11.77, y: 2.58, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3711023876798679849}
+  m_Father: {fileID: 3711023875342751029}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 21.2, y: -90, z: 0}
 --- !u!1 &3711023875342751030
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +60,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3711023875997952021}
-  - {fileID: 3711023876798679849}
+  - {fileID: 3535602796553415913}
   - {fileID: 3711023877173669446}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -166,8 +197,8 @@ GameObject:
   - component: {fileID: 3711023876798679855}
   - component: {fileID: 3711023876798679848}
   m_Layer: 0
-  m_Name: SceneCamera
-  m_TagString: SceneCamera
+  m_Name: camera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,12 +210,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3711023876798679850}
-  m_LocalRotation: {x: 0.13007322, y: -0.6950403, z: 0.13007322, w: 0.6950403}
-  m_LocalPosition: {x: 11.77, y: 2.58, z: 2.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3711023875342751029}
-  m_RootOrder: 1
+  m_Father: {fileID: 3535602796553415913}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.2, y: -90, z: 0}
 --- !u!20 &3711023876798679855
 Camera:

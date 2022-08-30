@@ -16,12 +16,12 @@ public class HitData
     /// 是否眩晕
     /// </summary>
     /// <param name="hurt"></param>
-    public bool isDizzy = false;
+    public E_AttackType attackType;
 
     public HitData(int hurt)
     {
         this.hurt = hurt;
         this.isCriticalHit = false;
-        this.isDizzy = false;
+        this.attackType = E_AttackType.Normal;
     }
 }

@@ -18,6 +18,7 @@ public class TestAI : MonoBehaviour
     [HideInInspector]
     public UnitMono unitMono;
 
+
     private Action _animProgressCallBack;
     private Action _animEndCallBack;
     private float _progressTime;
@@ -107,6 +108,7 @@ public class TestAI : MonoBehaviour
     {
 
         bool isDead = heroAttr.SetHp(hitData.hurt);
+        unitMono.ShowEffect(hitData);
         if (!isAI)
         {
             ZLogUtil.Log("¼º·½ÑªÁ¿£º"+heroAttr.hp);
@@ -116,9 +118,13 @@ public class TestAI : MonoBehaviour
             aIAgent.SendEvent(Const_BattleEvent.event_fight_dead);
             return;
         }
-        if (hitData.isDizzy)
+        switch (hitData.attackType)
         {
-            aIAgent.SendEvent(Const_BattleEvent.event_fight_dizzy);
+            case E_AttackType.Normal:
+                break;
+            case E_AttackType.Dizzy:
+                aIAgent.SendEvent(Const_BattleEvent.event_fight_dizzy);
+                break;
         }
     }
 

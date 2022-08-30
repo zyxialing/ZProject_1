@@ -42,7 +42,6 @@ public class Z_Dizzy : BaseAction
     {
         base.ResetTime();
         _testAI.CancelInvoke();
-        _testAI.unitMono.PlayStateText("StateText/dizzy", 3f);
     }
 
 }
